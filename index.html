@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Lifecycle email programs for D2C brands. Klaviyo certified. Strategy, copy, design, and deliverability, owned end to end.">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="retainr · Email that earns its keep">
+  <meta property="og:description" content="Lifecycle email programs for D2C brands. Klaviyo certified.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://retainr.co">
+
+  <title>retainr · Email that earns its keep</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 16 26 L 84 26 L 84 80 L 28 80 L 28 38 L 72 38 L 72 68 L 40 68 L 40 50 L 60 50' stroke='%23D4B36A' stroke-width='9' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --surface-2: #1F1F1F;
+      --surface-3: #2A2A2A;
+      --text: #F4F4ED;
+      --text-muted: #8E8E88;
+      --text-dim: rgba(244, 244, 237, 0.55);
+      --accent: #D4B36A;
+      --accent-dim: rgba(212, 179, 106, 0.65);
+      --accent-soft: rgba(212, 179, 106, 0.08);
+      --line: rgba(244, 244, 237, 0.08);
+      --line-strong: rgba(244, 244, 237, 0.16);
+
+      --sans: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: 'Fraunces', Georgia, serif;
+      --mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in: cubic-bezier(0.4, 0, 1, 1);
+      --dur-fast: 180ms;
+      --dur-base: 320ms;
+      --dur-slow: 640ms;
+
+      --container: 1440px;
+      --gutter: clamp(20px, 4vw, 48px);
+      --section-pad: clamp(80px, 10vw, 140px);
+      --nav-h: 72px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *::selection { background: var(--accent); color: var(--bg); }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    section { scroll-margin-top: 80px; }
+    img, svg { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    /* ============================================================
+       TYPOGRAPHY UTILITIES
+    ============================================================ */
+    .kicker {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(10px, 1vw, 12px);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-block;
+    }
+
+    .display {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(44px, 9vw, 112px);
+      letter-spacing: -0.04em;
+      line-height: 0.96;
+    }
+
+    .display em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .h2 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(28px, 4.5vw, 56px);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .h2 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .lead {
+      font-family: var(--sans);
+      font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.55;
+      color: rgba(244, 244, 237, 0.72);
+      max-width: 60ch;
+    }
+
+    .body-text {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(244, 244, 237, 0.72);
+    }
+
+    .mono-cap {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      border-radius: 4px;
+      border: 1px solid var(--accent);
+      transition: all var(--dur-fast) var(--ease-out);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .btn-primary:hover {
+      background: #E1C580;
+      border-color: #E1C580;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+    .btn-secondary:hover {
+      background: var(--accent-soft);
+    }
+
+    .btn-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--dur-fast) var(--ease-out);
+    }
+    .btn-arrow:hover { gap: 10px; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      z-index: 100;
+      transition: background var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+    }
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.92);
+      border-bottom-color: var(--line);
+    }
+    .nav-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 22px;
+      height: 22px;
+    }
+    .logo-text {
+      font-family: var(--sans);
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-link {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(244, 244, 237, 0.7);
+      transition: color var(--dur-fast);
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .nav-link:hover { color: var(--text); }
+    .nav-cta { flex-shrink: 0; }
+
+    .nav-burger {
+      display: none;
+      width: 40px; height: 40px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+      transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-fast);
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(2.75px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-2.75px) rotate(-45deg); }
+
+    .nav-mobile {
+      position: fixed;
+      top: 0;
+      left: 0; right: 0;
+      bottom: 0;
+      background: #0A0A0A;
+      padding: calc(var(--nav-h) + 32px) var(--gutter) 48px;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-fast);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .nav-mobile.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    /* When mobile menu open, force nav bg fully opaque so backdrop-blur doesn't peek */
+    .nav.menu-open {
+      background: #0A0A0A;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .nav-mobile-link {
+      font-family: var(--sans);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+    }
+    .nav-mobile-cta {
+      margin-top: 32px;
+      align-self: flex-start;
+    }
+
+    @media (max-width: 880px) {
+      .nav-links, .nav .nav-cta { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: calc(var(--nav-h) + 48px) var(--gutter) 96px;
+      position: relative;
+    }
+    .hero-content {
+      max-width: 920px;
+    }
+    .hero .kicker {
+      margin-bottom: 24px;
+      animation: fadeIn 600ms var(--ease-out) both;
+    }
+    .hero h1 {
+      margin-bottom: 28px;
+      animation: fadeUp 700ms 100ms var(--ease-out) both;
+    }
+    .hero .lead {
+      margin: 0 auto 40px;
+      animation: fadeUp 700ms 250ms var(--ease-out) both;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 700ms 400ms var(--ease-out) both;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================================
+       LOGO MARQUEE
+    ============================================================ */
+    .marquee-section {
+      padding: 24px 0 48px;
+      border-top: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee-section::before,
+    .marquee-section::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-section::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg) 0%, transparent 100%);
+    }
+    .marquee-section::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--bg) 0%, transparent 100%);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 80px;
+      width: max-content;
+      animation: marquee 45s linear infinite;
+      will-change: transform;
+    }
+    .marquee-section:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .client-logo {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      color: rgba(244, 244, 237, 0.5);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .client-logo.serif {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .client-logo.tracked {
+      font-family: var(--sans);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    .client-logo.thin {
+      font-weight: 300;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+    }
+
+    /* ============================================================
+       WORK SHOWCASE :: scrolling email mockup rows
+    ============================================================ */
+    .work-section {
+      padding: 60px 0 96px;
+      overflow: hidden;
+    }
+    .work-row {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      will-change: transform;
+      padding: 16px 0;
+    }
+    .work-row.row-1 { animation: marquee-left 80s linear infinite; }
+    .work-row.row-2 {
+      animation: marquee-right 90s linear infinite;
+      margin-top: 20px;
+    }
+    @keyframes marquee-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .work-section:hover .work-row { animation-play-state: paused; }
+
+    .email-card {
+      width: 240px;
+      height: 540px;
+      background: var(--surface);
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.5);
+      transition: transform var(--dur-base) var(--ease-out);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+    }
+    .email-card:hover { transform: scale(1.04); }
+
+    .email-rotate-1 { transform: rotate(-2deg); }
+    .email-rotate-2 { transform: rotate(1.5deg); }
+    .email-rotate-3 { transform: rotate(-1deg); }
+    .email-rotate-4 { transform: rotate(2deg); }
+    .email-rotate-5 { transform: rotate(-1.5deg); }
+    .email-card:hover { transform: rotate(0) scale(1.04); }
+
+    .email-header {
+      padding: 16px;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--line);
+      text-transform: uppercase;
+    }
+    .email-from { color: var(--text); margin-bottom: 4px; }
+    .email-subject {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      text-transform: none;
+      margin-top: 6px;
+    }
+    .email-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .email-hero {
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .email-hero-content {
+      padding: 28px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+    .email-h {
+      font-size: 22px;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      font-weight: 500;
+    }
+    .email-h em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .email-p {
+      font-size: 11px;
+      line-height: 1.5;
+      opacity: 0.75;
+    }
+    .email-cta {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 16px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      align-self: flex-start;
+    }
+
+    /* email theme variants */
+    .e-skin { background: linear-gradient(180deg, #F2E9E0 0%, #EAD8C2 100%); color: #3A2A1F; }
+    .e-skin .email-cta { background: #3A2A1F; color: #F2E9E0; }
+
+    .e-fashion { background: #1A1612; color: #F4F4ED; }
+    .e-fashion .email-hero { background: linear-gradient(135deg, #2A2018 0%, #4A3622 100%); }
+    .e-fashion .email-cta { background: #D4B36A; color: #1A1612; }
+
+    .e-supplement { background: #0F1A12; color: #E8F0E8; }
+    .e-supplement .email-hero { background: linear-gradient(180deg, #1A2F1F 0%, #0F1A12 100%); position: relative; }
+    .e-supplement .email-cta { background: #C5D4A5; color: #0F1A12; }
+
+    .e-food { background: #FFF8EC; color: #2A1F12; }
+    .e-food .email-hero { background: linear-gradient(135deg, #F5E4C8 0%, #E8C896 100%); }
+    .e-food .email-cta { background: #2A1F12; color: #FFF8EC; }
+
+    .e-fitness { background: #0F0F12; color: #E8E8F0; }
+    .e-fitness .email-hero { background: linear-gradient(135deg, #1F1F2A 0%, #0F0F12 100%); }
+    .e-fitness .email-cta { background: #E8E8F0; color: #0F0F12; }
+
+    .e-coffee { background: #1F1410; color: #F4E8D8; }
+    .e-coffee .email-hero { background: linear-gradient(180deg, #3A2418 0%, #1F1410 100%); }
+    .e-coffee .email-cta { background: #C5996B; color: #1F1410; }
+
+    .e-clean { background: #F4F4ED; color: #1A1A1A; }
+    .e-clean .email-hero { background: linear-gradient(135deg, #E8E4D8 0%, #D4C9B5 100%); }
+    .e-clean .email-cta { background: #1A1A1A; color: #F4F4ED; }
+
+    .e-luxury { background: #0A0A0A; color: #D4B36A; }
+    .e-luxury .email-hero { background: radial-gradient(circle at 30% 30%, #2A2218 0%, #0A0A0A 70%); }
+    .e-luxury .email-cta { background: #D4B36A; color: #0A0A0A; }
+
+    .e-pet { background: #FAF4E8; color: #2A1F12; }
+    .e-pet .email-hero { background: linear-gradient(135deg, #F0DCB5 0%, #D4A878 100%); }
+    .e-pet .email-cta { background: #C8964A; color: #FAF4E8; }
+
+    .e-tech { background: #08080A; color: #E0F0FF; }
+    .e-tech .email-hero { background: linear-gradient(135deg, #0F1828 0%, #08080A 100%); }
+    .e-tech .email-cta { background: #6BA8D4; color: #08080A; }
+
+    .e-floral { background: #FAF0F0; color: #3A1F25; }
+    .e-floral .email-hero { background: linear-gradient(135deg, #F0D4D8 0%, #D89098 100%); }
+    .e-floral .email-cta { background: #3A1F25; color: #FAF0F0; }
+
+    .e-mono { background: #1A1A1A; color: #F4F4ED; }
+    .e-mono .email-hero { background: linear-gradient(180deg, #2A2A2A 0%, #1A1A1A 100%); }
+    .e-mono .email-cta { background: #F4F4ED; color: #1A1A1A; }
+
+    .email-deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+    }
+    .email-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image: repeating-linear-gradient(45deg, currentColor 0, currentColor 1px, transparent 1px, transparent 12px);
+    }
+
+    /* ============================================================
+       STATS COUNTER
+    ============================================================ */
+    .stats-section {
+      padding: var(--section-pad) 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .stat-num {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(48px, 6vw, 88px);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+    }
+    .stat-num em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .stat-label {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    /* ============================================================
+       SERVICES ACCORDION
+    ============================================================ */
+    .services-section {
+      padding: var(--section-pad) 0;
+    }
+    .services-section .kicker {
+      margin-bottom: 24px;
+    }
+    .services-section h2 {
+      margin-bottom: 64px;
+      max-width: 18ch;
+    }
+    .services-list {
+      border-top: 1px solid var(--line);
+    }
+    .service-row {
+      border-bottom: 1px solid var(--line);
+      transition: border-color var(--dur-base);
+    }
+    .service-row.open {
+      border-bottom-color: var(--accent-dim);
+    }
+    .service-trigger {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 0;
+      cursor: pointer;
+      text-align: left;
+      transition: padding var(--dur-base);
+    }
+    .service-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-right: 24px;
+      transition: color var(--dur-base);
+    }
+    .service-row.open .service-num { color: var(--accent); }
+    .service-name {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(22px, 3vw, 36px);
+      letter-spacing: -0.02em;
+      color: var(--text);
+      transition: color var(--dur-base);
+      flex: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .service-row.open .service-name { color: var(--accent); }
+    .service-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 18px;
+      transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base);
+      flex-shrink: 0;
+    }
+    .service-row.open .service-icon {
+      transform: rotate(45deg);
+      border-color: var(--accent);
+    }
+    .service-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--dur-slow) var(--ease-out);
+    }
+    .service-row.open .service-body { max-height: 500px; }
+    .service-body-inner {
+      padding: 0 0 32px;
+      max-width: 60ch;
+      padding-left: 56px;
+    }
+    .service-body p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(244, 244, 237, 0.72);
+      margin-bottom: 20px;
+    }
+    .service-link {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 768px) {
+      .service-trigger { padding: 24px 0; }
+      .service-num { font-size: 14px; margin-right: 16px; }
+      .service-body-inner { padding-left: 32px; }
+    }
+
+    /* ============================================================
+       PLATFORMS
+    ============================================================ */
+    .platforms-section {
+      padding: var(--section-pad) 0;
+      border-top: 1px solid var(--line);
+    }
+    .platforms-grid-wrapper {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .platform-cell {
+      background: var(--bg);
+      padding: 28px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 88px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 16px;
+      color: rgba(244, 244, 237, 0.6);
+      letter-spacing: -0.01em;
+      transition: color var(--dur-fast), background var(--dur-fast);
+      position: relative;
+    }
+    .platform-cell:hover { color: var(--text); background: var(--surface); }
+    .platform-cell.featured {
+      color: var(--accent);
+      position: relative;
+    }
+    .platform-cell.featured::after {
+      content: '';
+      position: absolute;
+      top: 8px; right: 8px;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .platforms-copy h3 {
+      margin-bottom: 24px;
+    }
+    .platforms-copy .kicker { margin-bottom: 16px; }
+    @media (max-width: 880px) {
+      .platforms-grid-wrapper { grid-template-columns: 1fr; gap: 48px; }
+      .platforms-copy { order: -1; }
+      .platform-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+      .platform-cell { font-size: 14px; padding: 20px 8px; min-height: 72px; }
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .testimonials-section {
+      padding: var(--section-pad) 0;
+    }
+    .testimonials-section .kicker { margin-bottom: 48px; }
+    .testimonials-track-wrapper {
+      overflow: hidden;
+      margin: 0 calc(-1 * var(--gutter));
+      padding: 0 var(--gutter);
+    }
+    .testimonials-track {
+      display: flex;
+      gap: 24px;
+      transition: transform var(--dur-slow) var(--ease-out);
+    }
+    .testimonial-card {
+      flex: 0 0 calc((100% - 48px) / 3);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-height: 380px;
+    }
+    .testimonial-tag {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .testimonial-tag::before, .testimonial-tag::after {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      color: rgba(244, 244, 237, 0.92);
+      flex: 1;
+    }
+    .testimonial-attr {
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+    .testimonial-name {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .testimonial-title {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .testimonials-controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+    .carousel-btn {
+      width: 48px; height: 48px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 16px;
+      transition: all var(--dur-fast);
+    }
+    .carousel-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    @media (max-width: 1024px) {
+      .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); }
+    }
+    @media (max-width: 720px) {
+      .testimonial-card { flex: 0 0 100%; min-height: 320px; padding: 28px 24px; }
+      .testimonial-quote { font-size: 16px; }
+    }
+
+    /* ============================================================
+       CASE STUDIES
+    ============================================================ */
+    .cases-section {
+      padding: var(--section-pad) 0;
+      border-top: 1px solid var(--line);
+    }
+    .cases-section .kicker { margin-bottom: 48px; }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all var(--dur-base) var(--ease-out);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .case-card:hover {
+      border-color: var(--accent-dim);
+      transform: translateY(-2px);
+    }
+    .case-cover {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-cover-img {
+      width: 100%; height: 100%;
+      transition: transform var(--dur-slow) var(--ease-out);
+    }
+    .case-card:hover .case-cover-img { transform: scale(1.04); }
+    .case-cover-1 { background: linear-gradient(135deg, #3A2A1F 0%, #1F1410 100%); }
+    .case-cover-2 { background: linear-gradient(135deg, #1F2A3A 0%, #08182A 100%); }
+    .case-cover-3 { background: linear-gradient(135deg, #2A1F2A 0%, #1A0F1A 100%); }
+    .case-cover-4 { background: linear-gradient(135deg, #1F2A1F 0%, #0F1A0F 100%); }
+
+    .case-cover-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(244, 244, 237, 0.4);
+    }
+    .case-logo {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .case-logo.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .case-logo.thin { font-weight: 300; font-size: 26px; letter-spacing: -0.04em; }
+    .case-logo.tracked { font-size: 14px; letter-spacing: 0.32em; text-transform: uppercase; }
+
+    .case-body {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+    .case-narrative {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(244, 244, 237, 0.7);
+    }
+    .case-stat-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+    .case-stat-num {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 48px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+    }
+    .case-stat-num em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .case-stat-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.4;
+      flex: 1;
+    }
+    .case-tags-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .case-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      color: var(--text-dim);
+    }
+    .case-link {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--accent);
+      align-self: flex-start;
+      margin-top: auto;
+    }
+    .cases-more {
+      text-align: center;
+      margin-top: 56px;
+    }
+    .cases-more a {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    @media (max-width: 880px) {
+      .cases-grid { grid-template-columns: 1fr; }
+      .case-cover { height: 220px; }
+      .case-body { padding: 24px; }
+      .case-stat-num { font-size: 40px; }
+    }
+
+    /* ============================================================
+       MID-PAGE CTA
+    ============================================================ */
+    .mid-cta {
+      padding: var(--section-pad) 0;
+      text-align: center;
+    }
+    .mid-cta .kicker { margin-bottom: 32px; }
+    .mid-cta h2 {
+      max-width: 22ch;
+      margin: 0 auto 24px;
+    }
+    .mid-cta .lead {
+      margin: 0 auto 40px;
+      max-width: 50ch;
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-section {
+      padding: var(--section-pad) 0;
+      border-top: 1px solid var(--line);
+    }
+    .faq-section .kicker { margin-bottom: 48px; }
+    .faq-list {
+      max-width: 920px;
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+    }
+    .faq-row {
+      border-bottom: 1px solid var(--line);
+    }
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-q {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(15px, 1.6vw, 18px);
+      letter-spacing: -0.01em;
+      color: var(--text);
+      transition: color var(--dur-fast);
+    }
+    .faq-trigger:hover .faq-q,
+    .faq-row.open .faq-q { color: var(--accent); }
+    .faq-icon {
+      width: 24px; height: 24px;
+      color: var(--accent);
+      font-size: 16px;
+      transition: transform var(--dur-base) var(--ease-out);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .faq-row.open .faq-icon { transform: rotate(45deg); }
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--dur-slow) var(--ease-out);
+    }
+    .faq-row.open .faq-body { max-height: 500px; }
+    .faq-body-inner {
+      padding: 0 0 28px;
+      max-width: 60ch;
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(244, 244, 237, 0.72);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      padding: var(--section-pad) 0 32px;
+      border-top: 1px solid var(--line);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.5fr;
+      gap: 48px;
+      align-items: end;
+      padding-bottom: 80px;
+    }
+    .footer-col .kicker { margin-bottom: 16px; }
+    .footer-col h3 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(20px, 2.2vw, 28px);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 18ch;
+    }
+    .footer-col p {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      max-width: 30ch;
+    }
+    .footer-mark {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .footer-mark svg {
+      width: 88px; height: 88px;
+      opacity: 0.85;
+    }
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text-dim);
+      transition: color var(--dur-fast);
+    }
+    .footer-links a:hover { color: var(--text); }
+    @media (max-width: 880px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 56px; padding-bottom: 56px; }
+      .footer-mark { justify-content: flex-start; }
+      .footer-mark svg { width: 64px; height: 64px; }
+    }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       MOBILE TYPOGRAPHY ADJUSTMENTS
+    ============================================================ */
+    @media (max-width: 600px) {
+      .hero { min-height: auto; padding-top: calc(var(--nav-h) + 64px); padding-bottom: 64px; }
+      .hero-ctas { flex-direction: column; align-items: center; width: 100%; }
+      .hero-ctas .btn { width: 100%; max-width: 320px; justify-content: center; }
+      .stats-grid { gap: 40px 24px; }
+      .service-name { font-size: 22px; }
+      .case-card { border-radius: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═════════════════════════════════════════════════════════
+       NAVIGATION
+  ═════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo" aria-label="retainr home">
+        <svg class="logo-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path d="M 16 26 L 84 26 L 84 80 L 28 80 L 28 38 L 72 38 L 72 68 L 40 68 L 40 50 L 60 50" stroke="#D4B36A" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+        </svg>
+        <span class="logo-text">retainr</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#work">Work</a></li>
+        <li><a class="nav-link" href="#case-studies">Case Studies</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#faq">FAQ</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
+
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="navMobile">
+      <a class="nav-mobile-link" href="#services">Services</a>
+      <a class="nav-mobile-link" href="#work">Work</a>
+      <a class="nav-mobile-link" href="#case-studies">Case Studies</a>
+      <a class="nav-mobile-link" href="#about">About</a>
+      <a class="nav-mobile-link" href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary nav-mobile-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <main id="top">
+
+  <!-- ═════════════════════════════════════════════════════════
+       HERO
+  ═════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="kicker">Klaviyo certified</span>
+      <h1 class="display">Email that <em>earns its keep.</em></h1>
+      <p class="lead">Lifecycle email programs for D2C brands focused on repeat revenue. Strategy, copy, design, and deliverability, owned end to end.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">
+          Get in touch
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <a href="#case-studies" class="btn btn-secondary">Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       CLIENT LOGO MARQUEE
+  ═════════════════════════════════════════════════════════ -->
+  <section class="marquee-section" aria-label="Client brands">
+    <div class="marquee-track">
+      <span class="client-logo">FAUNA</span>
+      <span class="client-logo serif">Northbound</span>
+      <span class="client-logo tracked">BRIGHTLEAF</span>
+      <span class="client-logo thin">marlow</span>
+      <span class="client-logo">RIDGE &amp; CO</span>
+      <span class="client-logo serif">Atelier No.7</span>
+      <span class="client-logo tracked">VESSEL</span>
+      <span class="client-logo">HEMLOCK</span>
+      <span class="client-logo thin">odeon</span>
+      <span class="client-logo serif">Maison Lune</span>
+      <span class="client-logo tracked">PAPER &amp; OAK</span>
+      <span class="client-logo">Stillwater</span>
+      <!-- duplicate for seamless loop -->
+      <span class="client-logo">FAUNA</span>
+      <span class="client-logo serif">Northbound</span>
+      <span class="client-logo tracked">BRIGHTLEAF</span>
+      <span class="client-logo thin">marlow</span>
+      <span class="client-logo">RIDGE &amp; CO</span>
+      <span class="client-logo serif">Atelier No.7</span>
+      <span class="client-logo tracked">VESSEL</span>
+      <span class="client-logo">HEMLOCK</span>
+      <span class="client-logo thin">odeon</span>
+      <span class="client-logo serif">Maison Lune</span>
+      <span class="client-logo tracked">PAPER &amp; OAK</span>
+      <span class="client-logo">Stillwater</span>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       WORK SHOWCASE
+  ═════════════════════════════════════════════════════════ -->
+  <section class="work-section" id="work" aria-label="Selected work">
+    <div class="work-row row-1" id="workRow1"></div>
+    <div class="work-row row-2" id="workRow2"></div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       STATS
+  ═════════════════════════════════════════════════════════ -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <div class="stat-num"><em>$</em><span class="stat-counter" data-target="3.2" data-suffix="M+">$0M+</span></div>
+          <div class="stat-label">Attributed Revenue</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="stat-counter" data-target="12" data-suffix="">0</span></div>
+          <div class="stat-label">Brand Partners</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="stat-counter" data-target="40" data-suffix="">0</span><em>%</em></div>
+          <div class="stat-label">Repeat Revenue</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="stat-counter" data-target="15" data-suffix="">0</span><em>×</em></div>
+          <div class="stat-label">Average ROI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       SERVICES
+  ═════════════════════════════════════════════════════════ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <span class="kicker reveal">Our services</span>
+      <h2 class="h2 reveal">Built around <em>retention,</em> not opens.</h2>
+
+      <div class="services-list">
+        <div class="service-row open" data-service="0">
+          <button class="service-trigger" aria-expanded="true">
+            <span class="service-name"><em class="service-num">01.</em>Lifecycle Email</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner">
+              <p>Build email programs that drive repeat purchases. Welcome flows, post-purchase, abandoned cart, replenishment, and win-back. Klaviyo-native, segment-driven, and rebuilt every quarter as your data sharpens.</p>
+              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row" data-service="1">
+          <button class="service-trigger" aria-expanded="false">
+            <span class="service-name"><em class="service-num">02.</em>Campaign Strategy</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner">
+              <p>Promotional sends that protect deliverability and drive revenue. Calendar planning, segmentation, copy, design, send orchestration, and weekly performance review.</p>
+              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row" data-service="2">
+          <button class="service-trigger" aria-expanded="false">
+            <span class="service-name"><em class="service-num">03.</em>Deliverability Operations</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner">
+              <p>Inbox placement is the hidden multiplier on every send. We monitor reputation, authentication, list hygiene, complaint rates, and engagement quality. Permanent service, not a one-off audit.</p>
+              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row" data-service="3">
+          <button class="service-trigger" aria-expanded="false">
+            <span class="service-name"><em class="service-num">04.</em>Strategy &amp; Audit</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner">
+              <p>Senior eyes on your existing program. Full audit, lifecycle architecture, and ongoing advisory engagements for in-house teams that need direction.</p>
+              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       PLATFORMS
+  ═════════════════════════════════════════════════════════ -->
+  <section class="platforms-section">
+    <div class="container">
+      <div class="platforms-grid-wrapper">
+        <div class="platform-grid reveal">
+          <div class="platform-cell featured">Klaviyo</div>
+          <div class="platform-cell">Postscript</div>
+          <div class="platform-cell">Attentive</div>
+          <div class="platform-cell">Sendlane</div>
+          <div class="platform-cell">Recharge</div>
+          <div class="platform-cell">Skio</div>
+          <div class="platform-cell">Yotpo</div>
+          <div class="platform-cell">Junip</div>
+          <div class="platform-cell">Loop</div>
+          <div class="platform-cell">Gorgias</div>
+          <div class="platform-cell">Shopify</div>
+          <div class="platform-cell">Triple Whale</div>
+        </div>
+        <div class="platforms-copy reveal">
+          <span class="kicker">Platform Certified</span>
+          <h3 class="h2" style="font-size: clamp(22px, 2.5vw, 32px); margin-bottom: 20px;">Klaviyo first. <em>Stack chosen per brand.</em></h3>
+          <p class="body-text">We specialize in Klaviyo for D2C retention and partner with the platforms below for full-stack execution. Dedicated support and access to product roadmaps before they ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       TESTIMONIALS
+  ═════════════════════════════════════════════════════════ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <span class="kicker">Testimonials</span>
+      <div class="testimonials-track-wrapper">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"retainr rebuilt our flow architecture in six weeks. Q4 attributed revenue went up 40 percent without us sending more campaigns. They actually treat retention like an engineering problem."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Sara Chen</div>
+              <div class="testimonial-title">Founder, Fauna Skincare</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"Most agencies optimize for opens. retainr is the first team we've worked with that owns deliverability as a permanent service. Inbox placement went from 84 percent to 97 percent in three months."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Marcus Webb</div>
+              <div class="testimonial-title">Head of Marketing, Northbound</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"Our welcome series was leaking customers. They diagnosed it, rebuilt it, and walked us through every decision. We learned more about Klaviyo in three months than the previous two years."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Priya Patel</div>
+              <div class="testimonial-title">Director of Retention, Brightleaf</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"The audit alone was worth more than what some agencies charge for a full engagement. Then they actually executed on it. Twelve months in, retention is the strongest channel in the business."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Jonas Reid</div>
+              <div class="testimonial-title">Founder, Marlow</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"Fixed monthly pricing with explicit deliverable scope. No vague retainers. Knowing exactly what we're getting each month has changed how we plan the entire program."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Emma Lindqvist</div>
+              <div class="testimonial-title">CMO, Atelier No.7</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="testimonials-controls">
+        <button class="carousel-btn" id="testPrev" aria-label="Previous testimonial">←</button>
+        <button class="carousel-btn" id="testNext" aria-label="Next testimonial">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       CASE STUDIES
+  ═════════════════════════════════════════════════════════ -->
+  <section class="cases-section" id="case-studies">
+    <div class="container">
+      <span class="kicker">Case studies</span>
+
+      <div class="cases-grid">
+        <article class="case-card reveal">
+          <div class="case-cover case-cover-1">
+            <div class="case-cover-img"></div>
+            <div class="case-cover-overlay">[Case study cover image]</div>
+            <div class="case-logo serif">Fauna</div>
+          </div>
+          <div class="case-body">
+            <p class="case-narrative">Fauna went into Q4 with a leaky welcome series and untargeted campaigns. We rebuilt the entire flow architecture in six weeks. Q4 attributed revenue grew 197 percent year over year.</p>
+            <div class="case-stat-row">
+              <div class="case-stat-num"><em>+</em>197<em>%</em></div>
+              <div class="case-stat-label">Q4 attributed<br>revenue, YoY</div>
+            </div>
+            <div class="case-tags-row">
+              <span class="case-tag">Lifecycle</span>
+              <span class="case-tag">Campaigns</span>
+            </div>
+            <a href="#contact" class="case-link">See case &nbsp;→</a>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="case-cover case-cover-2">
+            <div class="case-cover-img"></div>
+            <div class="case-cover-overlay">[Case study cover image]</div>
+            <div class="case-logo">Northbound</div>
+          </div>
+          <div class="case-body">
+            <p class="case-narrative">Northbound needed lifecycle and campaign systems that scaled with their subscription growth. Twelve months in, email and SMS attributed revenue is up 159 percent.</p>
+            <div class="case-stat-row">
+              <div class="case-stat-num"><em>+</em>159<em>%</em></div>
+              <div class="case-stat-label">YoY email +<br>SMS attributed</div>
+            </div>
+            <div class="case-tags-row">
+              <span class="case-tag">Lifecycle</span>
+              <span class="case-tag">SMS</span>
+            </div>
+            <a href="#contact" class="case-link">See case &nbsp;→</a>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="case-cover case-cover-3">
+            <div class="case-cover-img"></div>
+            <div class="case-cover-overlay">[Case study cover image]</div>
+            <div class="case-logo tracked">BRIGHTLEAF</div>
+          </div>
+          <div class="case-body">
+            <p class="case-narrative">Brightleaf partnered with us during rapid acquisition growth. We built a retention engine that reduced early churn and lifted flow-attributed revenue 50 percent in the first quarter.</p>
+            <div class="case-stat-row">
+              <div class="case-stat-num"><em>+</em>50<em>%</em></div>
+              <div class="case-stat-label">Flow attributed<br>revenue lift</div>
+            </div>
+            <div class="case-tags-row">
+              <span class="case-tag">Lifecycle</span>
+              <span class="case-tag">Subscriptions</span>
+            </div>
+            <a href="#contact" class="case-link">See case &nbsp;→</a>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="case-cover case-cover-4">
+            <div class="case-cover-img"></div>
+            <div class="case-cover-overlay">[Case study cover image]</div>
+            <div class="case-logo thin">marlow</div>
+          </div>
+          <div class="case-body">
+            <p class="case-narrative">Marlow needed a unified retention strategy across email, SMS, and loyalty. We delivered a coordinated program that has generated $1.9M+ in attributed revenue over twelve months.</p>
+            <div class="case-stat-row">
+              <div class="case-stat-num"><em>$</em>1.9M<em>+</em></div>
+              <div class="case-stat-label">Total<br>attributed</div>
+            </div>
+            <div class="case-tags-row">
+              <span class="case-tag">Lifecycle</span>
+              <span class="case-tag">Loyalty</span>
+            </div>
+            <a href="#contact" class="case-link">See case &nbsp;→</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cases-more">
+        <a href="#contact" class="btn-arrow">View all case studies <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       MID-PAGE CTA
+  ═════════════════════════════════════════════════════════ -->
+  <section class="mid-cta" id="contact">
+    <div class="container">
+      <span class="kicker">Considering working together?</span>
+      <h2 class="h2">Send us a note. We'll send back an audit of your current program. <em>What's working, what's costing you, and what we'd do in the first 30 days.</em></h2>
+      <p class="lead">Free. Genuinely useful. No pitch deck.</p>
+      <a href="mailto:hello@retainr.co" class="btn btn-primary">
+        Get in touch
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       FAQ
+  ═════════════════════════════════════════════════════════ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <span class="kicker">FAQ</span>
+      <div class="faq-list">
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What does retainr do?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Lifecycle email programs for D2C brands. Strategy, copy, design, and deliverability, owned end to end. Klaviyo is our primary platform.</div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What kind of brands do you work with?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Founder-led D2C brands with strong product but under-architected email. Twelve current partners across skincare, apparel, supplements, food, and home. Average tenure fourteen months.</div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What platforms do you build on?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Klaviyo for email and SMS. Postscript or Attentive when those are already in place. Recharge or Skio for subscriptions. Yotpo or Junip for reviews. Stack picked per brand, not by default.</div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">How is retainr different from a traditional agency?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">We optimize for attributed revenue, not opens. We own deliverability operations as a permanent service. We bill fixed monthly with explicit deliverable scope, not vague retainers.</div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What does an engagement cost?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Pricing is fixed monthly, scoped to the program. Audits start at $5K. Strategy engagements start at $8K monthly. Full-service lifecycle programs start at $12K monthly. We don't take percentage-of-revenue deals.</div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">How do I get started?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Book a thirty-minute call. We'll ask three questions about your current program and book the audit if there's fit. The audit takes ten business days and is genuinely useful even if we don't end up working together.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═════════════════════════════════════════════════════════
+       FOOTER
+  ═════════════════════════════════════════════════════════ -->
+  <footer class="footer" id="about">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <span class="kicker">Want to talk?</span>
+          <h3>Send a note. We respond within one business day.</h3>
+          <p>Three questions and a calendar link, no boilerplate.</p>
+          <a href="mailto:hello@retainr.co" class="btn btn-primary">
+            Get in touch
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-col">
+          <span class="kicker">Looking for a hire?</span>
+          <h3>We hire operators who care about the unglamorous parts.</h3>
+          <p>Senior IC track. Remote-first. Quarterly reviews.</p>
+          <a href="mailto:careers@retainr.co" class="btn btn-secondary">View open roles</a>
+        </div>
+        <div class="footer-mark">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M 16 26 L 84 26 L 84 80 L 28 80 L 28 38 L 72 38 L 72 68 L 40 68 L 40 50 L 60 50" stroke="#D4B36A" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">© retainr 2026</span>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═════════════════════════════════════════════════════════
+       SCRIPTS
+  ═════════════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ─── 1. NAV: scroll state + mobile burger ─── */
+    const nav = document.getElementById('nav');
+    const burger = document.getElementById('navBurger');
+    const navMobile = document.getElementById('navMobile');
+
+    const setNavScroll = () => {
+      if (window.scrollY > 24) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    setNavScroll();
+    window.addEventListener('scroll', setNavScroll, { passive: true });
+
+    burger.addEventListener('click', () => {
+      const isOpen = burger.classList.toggle('open');
+      navMobile.classList.toggle('open', isOpen);
+      nav.classList.toggle('menu-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.nav-mobile-link, .nav-mobile-cta').forEach((el) => {
+      el.addEventListener('click', () => {
+        burger.classList.remove('open');
+        navMobile.classList.remove('open');
+        nav.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* ─── 2. WORK SHOWCASE: build email mockup cards ─── */
+    const emailCards = [
+      { theme: 'e-skin', from: 'Fauna', subject: 'Your skin remembered you.', h: 'Welcome <em>back.</em>', p: 'A small thank-you, since you started this with us.', cta: 'Claim 15% off' },
+      { theme: 'e-luxury', from: 'Atelier No.7', subject: 'Reserved in your size.', h: 'Hold complete.', p: 'The piece you saved is back. Held for forty-eight hours.', cta: 'View piece' },
+      { theme: 'e-supplement', from: 'Brightleaf', subject: 'Time to restock.', h: 'Refill <em>ready.</em>', p: 'Last bottle was 28 days ago. Ship the next on us.', cta: 'Refill cart' },
+      { theme: 'e-coffee', from: 'Stillwater', subject: 'New roast just landed.', h: 'Ethiopia, day 3.', p: 'Floral, bright, slightly stone-fruit. 200 bags.', cta: 'Brew it' },
+      { theme: 'e-clean', from: 'Marlow', subject: 'You left this.', h: 'Cart held.', p: 'Saved your selection. Same prices, twenty-four hours.', cta: 'Resume' },
+      { theme: 'e-fashion', from: 'Northbound', subject: 'For members only.', h: 'Early <em>access.</em>', p: 'Forty-eight hours before the rest. Drop opens 9am EST.', cta: 'Shop drop' },
+      { theme: 'e-pet', from: 'Hemlock', subject: 'Tail wagging? Tell us.', h: 'Quick favor.', p: 'A real review helps another dog parent decide. Sixty seconds.', cta: 'Leave review' },
+      { theme: 'e-floral', from: 'Maison Lune', subject: 'Almost out.', h: 'Six left.', p: 'The Saturday box. Saturdays only. Six remaining.', cta: 'Reserve box' },
+      { theme: 'e-fitness', from: 'Ridge & Co', subject: '90 days strong.', h: 'Quarter <em>one</em> done.', p: 'You logged 47 sessions. Next quarter starts Monday.', cta: 'Plan Q2' },
+      { theme: 'e-mono', from: 'Vessel', subject: 'Your piece is ready.', h: 'Ready <em>to ship.</em>', p: 'Hand-finished this week. Shipping confirmation tomorrow.', cta: 'Track order' },
+      { theme: 'e-food', from: 'Paper & Oak', subject: 'Anniversary discount.', h: 'One year.', p: 'A year since your first order. Thank you, properly.', cta: 'Use 25% off' },
+      { theme: 'e-tech', from: 'Odeon', subject: 'Setup tip inside.', h: 'Day 7 <em>onboarding.</em>', p: 'The one setting most customers miss in the first week.', cta: 'Open guide' },
+    ];
+
+    function buildEmailCard(d, rotateIndex) {
+      const card = document.createElement('div');
+      card.className = `email-card ${d.theme} email-rotate-${(rotateIndex % 5) + 1}`;
+      card.innerHTML = `
+        <div class="email-header">
+          <div class="email-from">From: ${d.from}</div>
+          <div>${d.subject}</div>
+        </div>
+        <div class="email-body">
+          <div class="email-hero"></div>
+          <div class="email-hero-content">
+            <h3 class="email-h">${d.h}</h3>
+            <p class="email-p">${d.p}</p>
+            <span class="email-cta">${d.cta}</span>
+          </div>
+        </div>
+      `;
+      return card;
+    }
+
+    const row1 = document.getElementById('workRow1');
+    const row2 = document.getElementById('workRow2');
+    if (row1 && row2) {
+      // Row 1 = first 6 emails, Row 2 = last 6
+      const r1 = emailCards.slice(0, 6);
+      const r2 = emailCards.slice(6, 12);
+
+      // Render twice for seamless loop
+      [...r1, ...r1].forEach((d, i) => row1.appendChild(buildEmailCard(d, i)));
+      [...r2, ...r2].forEach((d, i) => row2.appendChild(buildEmailCard(d, i + 2)));
+    }
+
+    /* ─── 3. STATS COUNTER ─── */
+    const animateCount = (el) => {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const isInt = Number.isInteger(target);
+      const duration = 1400;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const current = target * eased;
+        el.textContent = (isInt ? Math.floor(current) : current.toFixed(1)) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = (isInt ? target : target.toFixed(1)) + suffix;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          statObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-counter').forEach((el) => statObserver.observe(el));
+
+    /* ─── 4. SERVICES ACCORDION (single-open) ─── */
+    document.querySelectorAll('.service-row').forEach((row) => {
+      const trigger = row.querySelector('.service-trigger');
+      trigger.addEventListener('click', () => {
+        const isOpen = row.classList.contains('open');
+        document.querySelectorAll('.service-row').forEach((r) => {
+          r.classList.remove('open');
+          r.querySelector('.service-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          row.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ─── 5. FAQ ACCORDION (multi-open) ─── */
+    document.querySelectorAll('.faq-row').forEach((row) => {
+      const trigger = row.querySelector('.faq-trigger');
+      trigger.addEventListener('click', () => {
+        const isOpen = row.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+    });
+
+    /* ─── 6. TESTIMONIALS CAROUSEL ─── */
+    const track = document.getElementById('testimonialsTrack');
+    const prevBtn = document.getElementById('testPrev');
+    const nextBtn = document.getElementById('testNext');
+    let testIndex = 0;
+    let testCount = track.children.length;
+
+    const getVisibleCount = () => {
+      const w = window.innerWidth;
+      if (w <= 720) return 1;
+      if (w <= 1024) return 2;
+      return 3;
+    };
+
+    const updateTrack = () => {
+      const visible = getVisibleCount();
+      const maxIdx = Math.max(0, testCount - visible);
+      testIndex = Math.min(testIndex, maxIdx);
+      const cardW = track.children[0].offsetWidth + 24; // include gap
+      track.style.transform = `translateX(-${testIndex * cardW}px)`;
+      prevBtn.disabled = testIndex === 0;
+      nextBtn.disabled = testIndex >= maxIdx;
+    };
+
+    prevBtn.addEventListener('click', () => { testIndex--; updateTrack(); });
+    nextBtn.addEventListener('click', () => { testIndex++; updateTrack(); });
+
+    let resizeT;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(updateTrack, 100);
+    });
+    updateTrack();
+
+    // auto-advance
+    let autoplay = setInterval(() => {
+      const visible = getVisibleCount();
+      const maxIdx = Math.max(0, testCount - visible);
+      testIndex = (testIndex + 1) > maxIdx ? 0 : testIndex + 1;
+      updateTrack();
+    }, 7000);
+
+    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoplay));
+    track.parentElement.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => {
+        const visible = getVisibleCount();
+        const maxIdx = Math.max(0, testCount - visible);
+        testIndex = (testIndex + 1) > maxIdx ? 0 : testIndex + 1;
+        updateTrack();
+      }, 7000);
+    });
+
+    // touch swipe
+    let touchStart = null;
+    track.addEventListener('touchstart', (e) => { touchStart = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      if (touchStart === null) return;
+      const dx = e.changedTouches[0].clientX - touchStart;
+      if (Math.abs(dx) > 50) {
+        if (dx < 0) nextBtn.click();
+        else prevBtn.click();
+      }
+      touchStart = null;
+    }, { passive: true });
+
+    /* ─── 7. SCROLL REVEAL ─── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  })();
+  </script>
+</body>
+</html>
