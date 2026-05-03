@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Lifecycle email programs for D2C brands. Klaviyo certified. Strategy, copy, design, and deliverability, owned end to end.">
+  <meta name="description" content="Lifecycle email and SMS marketing systems for D2C brands. Klaviyo certified. We make email 40% of your store revenue, or you don't pay.">
   <meta name="theme-color" content="#0A0A0A">
 
   <meta property="og:title" content="retainr · Email that earns its keep">
-  <meta property="og:description" content="Lifecycle email programs for D2C brands. Klaviyo certified.">
+  <meta property="og:description" content="Lifecycle email and SMS for D2C brands. Klaviyo certified. 40% of store revenue or your money back.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://retainr.co">
 
@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 16 26 L 84 26 L 84 80 L 28 80 L 28 38 L 72 38 L 72 68 L 40 68 L 40 50 L 60 50' stroke='%23D4B36A' stroke-width='9' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3C/svg%3E">
 
@@ -24,7 +24,6 @@
       --bg: #0A0A0A;
       --surface: #141414;
       --surface-2: #1F1F1F;
-      --surface-3: #2A2A2A;
       --text: #F4F4ED;
       --text-muted: #8E8E88;
       --text-dim: rgba(244, 244, 237, 0.55);
@@ -36,10 +35,8 @@
 
       --sans: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
       --serif: 'Fraunces', Georgia, serif;
-      --mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
 
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in: cubic-bezier(0.4, 0, 1, 1);
       --dur-fast: 180ms;
       --dur-base: 320ms;
       --dur-slow: 640ms;
@@ -82,16 +79,8 @@
 
     section { scroll-margin-top: 80px; }
     img, svg { display: block; max-width: 100%; }
-
     a { color: inherit; text-decoration: none; }
-
-    button {
-      background: none;
-      border: none;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-    }
+    button { background: none; border: none; color: inherit; font: inherit; cursor: pointer; }
 
     .container {
       max-width: var(--container);
@@ -100,13 +89,13 @@
       padding-right: var(--gutter);
     }
 
-    /* ============================================================
-       TYPOGRAPHY UTILITIES
-    ============================================================ */
+    /* ==============================================================
+       KICKER :: clean, no leading dash, no pill. Just text.
+    ============================================================== */
     .kicker {
       font-family: var(--sans);
-      font-weight: 500;
-      font-size: clamp(10px, 1vw, 12px);
+      font-weight: 600;
+      font-size: clamp(11px, 0.95vw, 13px);
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent);
@@ -120,13 +109,7 @@
       letter-spacing: -0.04em;
       line-height: 0.96;
     }
-
-    .display em {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
-    }
+    .display em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
 
     .h2 {
       font-family: var(--sans);
@@ -135,12 +118,7 @@
       letter-spacing: -0.03em;
       line-height: 1.05;
     }
-    .h2 em {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
-    }
+    .h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
 
     .lead {
       font-family: var(--sans);
@@ -157,18 +135,17 @@
       color: rgba(244, 244, 237, 0.72);
     }
 
-    .mono-cap {
-      font-family: var(--mono);
-      font-size: 11px;
+    /* All "label" text :: uses sans, NOT mono */
+    .label-text {
+      font-family: var(--sans);
       font-weight: 500;
-      letter-spacing: 0.16em;
+      font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-dim);
     }
 
-    /* ============================================================
-       BUTTONS
-    ============================================================ */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -184,34 +161,15 @@
       cursor: pointer;
       white-space: nowrap;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--bg);
-    }
-    .btn-primary:hover {
-      background: #E1C580;
-      border-color: #E1C580;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: transparent;
-      color: var(--accent);
-    }
-    .btn-secondary:hover {
-      background: var(--accent-soft);
-    }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: #E1C580; border-color: #E1C580; transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--accent); }
+    .btn-secondary:hover { background: var(--accent-soft); }
 
-    .btn-arrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap var(--dur-fast) var(--ease-out);
-    }
+    .btn-arrow { display: inline-flex; align-items: center; gap: 6px; transition: gap var(--dur-fast) var(--ease-out); }
     .btn-arrow:hover { gap: 10px; }
 
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
+    /* Nav */
     .nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -223,10 +181,7 @@
       z-index: 100;
       transition: background var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
     }
-    .nav.scrolled {
-      background: rgba(10, 10, 10, 0.92);
-      border-bottom-color: var(--line);
-    }
+    .nav.scrolled { background: rgba(10, 10, 10, 0.92); border-bottom-color: var(--line); }
     .nav-inner {
       max-width: var(--container);
       margin: 0 auto;
@@ -237,29 +192,10 @@
       justify-content: space-between;
       gap: 24px;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-    .logo-mark {
-      width: 22px;
-      height: 22px;
-    }
-    .logo-text {
-      font-family: var(--sans);
-      font-size: 19px;
-      font-weight: 500;
-      letter-spacing: -0.025em;
-      color: var(--text);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
+    .logo { display: flex; align-items: center; gap: 8px; flex-shrink: 0; position: relative; z-index: 102; }
+    .logo-mark { width: 22px; height: 22px; }
+    .logo-text { font-family: var(--sans); font-size: 19px; font-weight: 500; letter-spacing: -0.025em; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-link {
       font-family: var(--sans);
       font-size: 14px;
@@ -280,6 +216,8 @@
       align-items: center;
       gap: 4px;
       cursor: pointer;
+      position: relative;
+      z-index: 102;
     }
     .nav-burger span {
       display: block;
@@ -294,9 +232,7 @@
 
     .nav-mobile {
       position: fixed;
-      top: 0;
-      left: 0; right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: #0A0A0A;
       padding: calc(var(--nav-h) + 32px) var(--gutter) 48px;
       transform: translateY(-100%);
@@ -309,17 +245,8 @@
       z-index: 99;
       overflow-y: auto;
     }
-    .nav-mobile.open {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-    /* When mobile menu open, force nav bg fully opaque so backdrop-blur doesn't peek */
-    .nav.menu-open {
-      background: #0A0A0A;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-    }
+    .nav-mobile.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .nav.menu-open { background: #0A0A0A; backdrop-filter: none; -webkit-backdrop-filter: none; }
     .nav-mobile-link {
       font-family: var(--sans);
       font-size: 28px;
@@ -330,19 +257,16 @@
       border-bottom: 1px solid var(--line);
       cursor: pointer;
     }
-    .nav-mobile-cta {
-      margin-top: 32px;
-      align-self: flex-start;
-    }
+    .nav-mobile-cta { margin-top: 32px; align-self: flex-start; }
 
     @media (max-width: 880px) {
       .nav-links, .nav .nav-cta { display: none; }
       .nav-burger { display: flex; }
     }
 
-    /* ============================================================
+    /* ==============================================================
        HERO
-    ============================================================ */
+    ============================================================== */
     .hero {
       min-height: 92vh;
       display: flex;
@@ -353,21 +277,10 @@
       padding: calc(var(--nav-h) + 48px) var(--gutter) 96px;
       position: relative;
     }
-    .hero-content {
-      max-width: 920px;
-    }
-    .hero .kicker {
-      margin-bottom: 24px;
-      animation: fadeIn 600ms var(--ease-out) both;
-    }
-    .hero h1 {
-      margin-bottom: 28px;
-      animation: fadeUp 700ms 100ms var(--ease-out) both;
-    }
-    .hero .lead {
-      margin: 0 auto 40px;
-      animation: fadeUp 700ms 250ms var(--ease-out) both;
-    }
+    .hero-content { max-width: 920px; }
+    .hero .kicker { margin-bottom: 28px; animation: fadeIn 600ms var(--ease-out) both; }
+    .hero h1 { margin-bottom: 28px; animation: fadeUp 700ms 100ms var(--ease-out) both; }
+    .hero .lead { margin: 0 auto 40px; animation: fadeUp 700ms 250ms var(--ease-out) both; }
     .hero-ctas {
       display: flex;
       gap: 12px;
@@ -375,23 +288,32 @@
       flex-wrap: wrap;
       animation: fadeUp 700ms 400ms var(--ease-out) both;
     }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Hero trust line :: using sans (not mono) */
+    .hero-trust {
+      margin-top: 48px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      animation: fadeIn 800ms 600ms var(--ease-out) both;
     }
+    .hero-trust strong { color: var(--accent); font-weight: 600; }
 
-    /* ============================================================
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ==============================================================
        LOGO MARQUEE
-    ============================================================ */
+    ============================================================== */
     .marquee-section {
       padding: 24px 0 48px;
       border-top: 1px solid var(--line);
       overflow: hidden;
       position: relative;
     }
-    .marquee-section::before,
-    .marquee-section::after {
+    .marquee-section::before, .marquee-section::after {
       content: '';
       position: absolute;
       top: 0; bottom: 0;
@@ -399,20 +321,15 @@
       z-index: 2;
       pointer-events: none;
     }
-    .marquee-section::before {
-      left: 0;
-      background: linear-gradient(90deg, var(--bg) 0%, transparent 100%);
-    }
-    .marquee-section::after {
-      right: 0;
-      background: linear-gradient(270deg, var(--bg) 0%, transparent 100%);
-    }
+    .marquee-section::before { left: 0; background: linear-gradient(90deg, var(--bg) 0%, transparent 100%); }
+    .marquee-section::after { right: 0; background: linear-gradient(270deg, var(--bg) 0%, transparent 100%); }
     .marquee-track {
       display: flex;
-      gap: 80px;
+      gap: 64px;
       width: max-content;
-      animation: marquee 45s linear infinite;
+      animation: marquee 60s linear infinite;
       will-change: transform;
+      align-items: center;
     }
     .marquee-section:hover .marquee-track { animation-play-state: paused; }
     @keyframes marquee {
@@ -424,54 +341,32 @@
       font-weight: 500;
       font-size: 22px;
       letter-spacing: -0.02em;
-      color: rgba(244, 244, 237, 0.5);
+      color: rgba(244, 244, 237, 0.55);
       white-space: nowrap;
       flex-shrink: 0;
+      transition: color var(--dur-fast);
     }
-    .client-logo.serif {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-    }
-    .client-logo.tracked {
-      font-family: var(--sans);
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-    .client-logo.thin {
-      font-weight: 300;
-      font-size: 26px;
-      letter-spacing: -0.04em;
-    }
+    .client-logo:hover { color: var(--text); }
+    .client-logo.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .client-logo.tracked { letter-spacing: 0.32em; text-transform: uppercase; font-size: 14px; }
+    .client-logo.thin { font-weight: 300; font-size: 26px; letter-spacing: -0.04em; }
+    .client-logo.bold { font-weight: 700; font-size: 24px; letter-spacing: -0.03em; }
 
-    /* ============================================================
-       WORK SHOWCASE :: scrolling email mockup rows
-    ============================================================ */
-    .work-section {
-      padding: 60px 0 96px;
-      overflow: hidden;
-    }
+    /* ==============================================================
+       WORK SHOWCASE :: uses real images now
+    ============================================================== */
+    .work-section { padding: 60px 0 96px; overflow: hidden; }
     .work-row {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       width: max-content;
       will-change: transform;
-      padding: 16px 0;
+      padding: 24px 0;
     }
-    .work-row.row-1 { animation: marquee-left 80s linear infinite; }
-    .work-row.row-2 {
-      animation: marquee-right 90s linear infinite;
-      margin-top: 20px;
-    }
-    @keyframes marquee-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes marquee-right {
-      0% { transform: translateX(-50%); }
-      100% { transform: translateX(0); }
-    }
+    .work-row.row-1 { animation: marquee-left 90s linear infinite; }
+    .work-row.row-2 { animation: marquee-right 100s linear infinite; margin-top: 24px; }
+    @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes marquee-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
     .work-section:hover .work-row { animation-play-state: paused; }
 
     .email-card {
@@ -481,149 +376,31 @@
       border-radius: 12px;
       overflow: hidden;
       flex-shrink: 0;
-      box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.5);
-      transition: transform var(--dur-base) var(--ease-out);
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--line);
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+      display: block;
     }
-    .email-card:hover { transform: scale(1.04); }
-
+    .email-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
     .email-rotate-1 { transform: rotate(-2deg); }
     .email-rotate-2 { transform: rotate(1.5deg); }
     .email-rotate-3 { transform: rotate(-1deg); }
     .email-rotate-4 { transform: rotate(2deg); }
     .email-rotate-5 { transform: rotate(-1.5deg); }
-    .email-card:hover { transform: rotate(0) scale(1.04); }
-
-    .email-header {
-      padding: 16px;
-      font-family: var(--mono);
-      font-size: 9px;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-      border-bottom: 1px solid var(--line);
-      text-transform: uppercase;
-    }
-    .email-from { color: var(--text); margin-bottom: 4px; }
-    .email-subject {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: -0.01em;
-      text-transform: none;
-      margin-top: 6px;
-    }
-    .email-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .email-hero {
-      height: 200px;
-      position: relative;
-      overflow: hidden;
-    }
-    .email-hero-content {
-      padding: 28px 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-    }
-    .email-h {
-      font-size: 22px;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      font-weight: 500;
-    }
-    .email-h em {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-    }
-    .email-p {
-      font-size: 11px;
-      line-height: 1.5;
-      opacity: 0.75;
-    }
-    .email-cta {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 8px 16px;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      align-self: flex-start;
+    .email-card:hover {
+      transform: rotate(0) scale(1.06);
+      box-shadow: 0 32px 80px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--accent-dim);
+      z-index: 5;
     }
 
-    /* email theme variants */
-    .e-skin { background: linear-gradient(180deg, #F2E9E0 0%, #EAD8C2 100%); color: #3A2A1F; }
-    .e-skin .email-cta { background: #3A2A1F; color: #F2E9E0; }
-
-    .e-fashion { background: #1A1612; color: #F4F4ED; }
-    .e-fashion .email-hero { background: linear-gradient(135deg, #2A2018 0%, #4A3622 100%); }
-    .e-fashion .email-cta { background: #D4B36A; color: #1A1612; }
-
-    .e-supplement { background: #0F1A12; color: #E8F0E8; }
-    .e-supplement .email-hero { background: linear-gradient(180deg, #1A2F1F 0%, #0F1A12 100%); position: relative; }
-    .e-supplement .email-cta { background: #C5D4A5; color: #0F1A12; }
-
-    .e-food { background: #FFF8EC; color: #2A1F12; }
-    .e-food .email-hero { background: linear-gradient(135deg, #F5E4C8 0%, #E8C896 100%); }
-    .e-food .email-cta { background: #2A1F12; color: #FFF8EC; }
-
-    .e-fitness { background: #0F0F12; color: #E8E8F0; }
-    .e-fitness .email-hero { background: linear-gradient(135deg, #1F1F2A 0%, #0F0F12 100%); }
-    .e-fitness .email-cta { background: #E8E8F0; color: #0F0F12; }
-
-    .e-coffee { background: #1F1410; color: #F4E8D8; }
-    .e-coffee .email-hero { background: linear-gradient(180deg, #3A2418 0%, #1F1410 100%); }
-    .e-coffee .email-cta { background: #C5996B; color: #1F1410; }
-
-    .e-clean { background: #F4F4ED; color: #1A1A1A; }
-    .e-clean .email-hero { background: linear-gradient(135deg, #E8E4D8 0%, #D4C9B5 100%); }
-    .e-clean .email-cta { background: #1A1A1A; color: #F4F4ED; }
-
-    .e-luxury { background: #0A0A0A; color: #D4B36A; }
-    .e-luxury .email-hero { background: radial-gradient(circle at 30% 30%, #2A2218 0%, #0A0A0A 70%); }
-    .e-luxury .email-cta { background: #D4B36A; color: #0A0A0A; }
-
-    .e-pet { background: #FAF4E8; color: #2A1F12; }
-    .e-pet .email-hero { background: linear-gradient(135deg, #F0DCB5 0%, #D4A878 100%); }
-    .e-pet .email-cta { background: #C8964A; color: #FAF4E8; }
-
-    .e-tech { background: #08080A; color: #E0F0FF; }
-    .e-tech .email-hero { background: linear-gradient(135deg, #0F1828 0%, #08080A 100%); }
-    .e-tech .email-cta { background: #6BA8D4; color: #08080A; }
-
-    .e-floral { background: #FAF0F0; color: #3A1F25; }
-    .e-floral .email-hero { background: linear-gradient(135deg, #F0D4D8 0%, #D89098 100%); }
-    .e-floral .email-cta { background: #3A1F25; color: #FAF0F0; }
-
-    .e-mono { background: #1A1A1A; color: #F4F4ED; }
-    .e-mono .email-hero { background: linear-gradient(180deg, #2A2A2A 0%, #1A1A1A 100%); }
-    .e-mono .email-cta { background: #F4F4ED; color: #1A1A1A; }
-
-    .email-deco-circle {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(20px);
-    }
-    .email-pattern {
-      position: absolute;
-      inset: 0;
-      opacity: 0.1;
-      background-image: repeating-linear-gradient(45deg, currentColor 0, currentColor 1px, transparent 1px, transparent 12px);
-    }
-
-    /* ============================================================
-       STATS COUNTER
-    ============================================================ */
+    /* ==============================================================
+       STATS :: full container width, NO leading dash on label
+    ============================================================== */
     .stats-section {
       padding: var(--section-pad) 0;
       border-top: 1px solid var(--line);
@@ -632,13 +409,20 @@
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 48px;
+      gap: 0;
     }
     .stat {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+      align-items: flex-start;
+      text-align: left;
+      padding: 0 32px;
+      border-right: 1px solid var(--line);
+      position: relative;
     }
+    .stat:first-child { padding-left: 0; }
+    .stat:last-child { border-right: none; padding-right: 0; }
     .stat-num {
       font-family: var(--sans);
       font-weight: 500;
@@ -647,47 +431,38 @@
       line-height: 1;
       color: var(--text);
     }
-    .stat-num em {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
-    }
+    .stat-num em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
     .stat-label {
-      font-family: var(--mono);
+      font-family: var(--sans);
       font-weight: 500;
       font-size: 11px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-dim);
-    }
-    @media (max-width: 768px) {
-      .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-    }
-
-    /* ============================================================
-       SERVICES ACCORDION
-    ============================================================ */
-    .services-section {
-      padding: var(--section-pad) 0;
-    }
-    .services-section .kicker {
-      margin-bottom: 24px;
-    }
-    .services-section h2 {
-      margin-bottom: 64px;
       max-width: 18ch;
     }
-    .services-list {
-      border-top: 1px solid var(--line);
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+      .stat { padding: 24px 16px; border-bottom: 1px solid var(--line); align-items: flex-start; }
+      .stat:first-child, .stat:nth-child(3) { padding-left: 0; }
+      .stat:nth-child(2), .stat:nth-child(4) { padding-right: 0; border-right: none; }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+      .stat:nth-child(3) { border-right: 1px solid var(--line); }
     }
+
+    /* ==============================================================
+       SERVICES :: fixed transitions (symmetric open/close timing)
+    ============================================================== */
+    .services-section { padding: var(--section-pad) 0; }
+    .services-section .kicker { margin-bottom: 24px; }
+    .services-section h2 { margin-bottom: 64px; max-width: 18ch; }
+    .services-list { border-top: 1px solid var(--line); }
     .service-row {
       border-bottom: 1px solid var(--line);
       transition: border-color var(--dur-base);
     }
-    .service-row.open {
-      border-bottom-color: var(--accent-dim);
-    }
+    .service-row.open { border-bottom-color: var(--accent-dim); }
     .service-trigger {
       width: 100%;
       display: flex;
@@ -696,7 +471,6 @@
       padding: 32px 0;
       cursor: pointer;
       text-align: left;
-      transition: padding var(--dur-base);
     }
     .service-num {
       font-family: var(--serif);
@@ -734,47 +508,32 @@
       transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base);
       flex-shrink: 0;
     }
-    .service-row.open .service-icon {
-      transform: rotate(45deg);
-      border-color: var(--accent);
-    }
+    .service-row.open .service-icon { transform: rotate(45deg); border-color: var(--accent); }
+    /* grid-template-rows technique for symmetric open/close */
     .service-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height var(--dur-slow) var(--ease-out);
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--dur-base) var(--ease-out);
     }
-    .service-row.open .service-body { max-height: 500px; }
+    .service-row.open .service-body { grid-template-rows: 1fr; }
+    .service-body-inner-wrap { overflow: hidden; min-height: 0; }
     .service-body-inner {
       padding: 0 0 32px;
       max-width: 60ch;
       padding-left: 56px;
     }
-    .service-body p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: rgba(244, 244, 237, 0.72);
-      margin-bottom: 20px;
-    }
-    .service-link {
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: 13px;
-      color: var(--accent);
-      letter-spacing: 0.02em;
-    }
+    .service-body p { font-size: 16px; line-height: 1.6; color: rgba(244, 244, 237, 0.72); margin-bottom: 20px; }
+    .service-link { font-family: var(--sans); font-weight: 500; font-size: 13px; color: var(--accent); letter-spacing: 0.02em; }
     @media (max-width: 768px) {
       .service-trigger { padding: 24px 0; }
       .service-num { font-size: 14px; margin-right: 16px; }
       .service-body-inner { padding-left: 32px; }
     }
 
-    /* ============================================================
+    /* ==============================================================
        PLATFORMS
-    ============================================================ */
-    .platforms-section {
-      padding: var(--section-pad) 0;
-      border-top: 1px solid var(--line);
-    }
+    ============================================================== */
+    .platforms-section { padding: var(--section-pad) 0; border-top: 1px solid var(--line); }
     .platforms-grid-wrapper {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
@@ -806,10 +565,7 @@
       position: relative;
     }
     .platform-cell:hover { color: var(--text); background: var(--surface); }
-    .platform-cell.featured {
-      color: var(--accent);
-      position: relative;
-    }
+    .platform-cell.featured { color: var(--accent); }
     .platform-cell.featured::after {
       content: '';
       position: absolute;
@@ -818,10 +574,8 @@
       background: var(--accent);
       border-radius: 50%;
     }
-    .platforms-copy h3 {
-      margin-bottom: 24px;
-    }
-    .platforms-copy .kicker { margin-bottom: 16px; }
+    .platforms-copy h3 { margin-bottom: 24px; }
+    .platforms-copy .kicker { margin-bottom: 20px; }
     @media (max-width: 880px) {
       .platforms-grid-wrapper { grid-template-columns: 1fr; gap: 48px; }
       .platforms-copy { order: -1; }
@@ -832,22 +586,22 @@
       .platform-cell { font-size: 14px; padding: 20px 8px; min-height: 72px; }
     }
 
-    /* ============================================================
-       TESTIMONIALS
-    ============================================================ */
-    .testimonials-section {
-      padding: var(--section-pad) 0;
-    }
+    /* ==============================================================
+       TESTIMONIALS :: fixed mobile carousel
+    ============================================================== */
+    .testimonials-section { padding: var(--section-pad) 0; }
     .testimonials-section .kicker { margin-bottom: 48px; }
     .testimonials-track-wrapper {
       overflow: hidden;
       margin: 0 calc(-1 * var(--gutter));
       padding: 0 var(--gutter);
+      touch-action: pan-y;
     }
     .testimonials-track {
       display: flex;
       gap: 24px;
       transition: transform var(--dur-slow) var(--ease-out);
+      will-change: transform;
     }
     .testimonial-card {
       flex: 0 0 calc((100% - 48px) / 3);
@@ -862,7 +616,7 @@
     }
     .testimonial-tag {
       font-family: var(--sans);
-      font-weight: 500;
+      font-weight: 600;
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -887,26 +641,15 @@
       color: rgba(244, 244, 237, 0.92);
       flex: 1;
     }
-    .testimonial-attr {
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-    }
-    .testimonial-name {
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .testimonial-title {
-      font-family: var(--sans);
-      font-size: 13px;
-      color: var(--text-dim);
-    }
+    .testimonial-attr { padding-top: 20px; border-top: 1px solid var(--line); }
+    .testimonial-name { font-family: var(--sans); font-weight: 500; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+    .testimonial-title { font-family: var(--sans); font-size: 13px; color: var(--text-dim); }
+
     .testimonials-controls {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       justify-content: center;
+      align-items: center;
       margin-top: 48px;
     }
     .carousel-btn {
@@ -919,25 +662,40 @@
       color: var(--accent);
       font-size: 16px;
       transition: all var(--dur-fast);
+      cursor: pointer;
+      background: transparent;
     }
-    .carousel-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .carousel-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
     .carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-    @media (max-width: 1024px) {
-      .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); }
+
+    .carousel-dots { display: flex; gap: 8px; align-items: center; }
+    .carousel-dot {
+      width: 6px; height: 6px;
+      background: var(--line-strong);
+      border-radius: 50%;
+      transition: all var(--dur-fast);
+      cursor: pointer;
+      border: none;
+      padding: 0;
     }
+    .carousel-dot.active {
+      background: var(--accent);
+      width: 24px;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 1024px) { .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); } }
     @media (max-width: 720px) {
-      .testimonial-card { flex: 0 0 100%; min-height: 320px; padding: 28px 24px; }
+      .testimonial-card { flex: 0 0 100%; min-height: 300px; padding: 28px 24px; }
       .testimonial-quote { font-size: 16px; }
     }
 
-    /* ============================================================
-       CASE STUDIES
-    ============================================================ */
-    .cases-section {
-      padding: var(--section-pad) 0;
-      border-top: 1px solid var(--line);
-    }
-    .cases-section .kicker { margin-bottom: 48px; }
+    /* ==============================================================
+       CASE STUDIES :: competitor-style
+    ============================================================== */
+    .cases-section { padding: var(--section-pad) 0; border-top: 1px solid var(--line); }
+    .cases-section .kicker { margin-bottom: 24px; }
+    .cases-section h2 { margin-bottom: 56px; max-width: 22ch; }
     .cases-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -949,174 +707,226 @@
       border-radius: 8px;
       overflow: hidden;
       transition: all var(--dur-base) var(--ease-out);
-      cursor: pointer;
       display: flex;
       flex-direction: column;
     }
-    .case-card:hover {
-      border-color: var(--accent-dim);
-      transform: translateY(-2px);
-    }
+    .case-card:hover { border-color: var(--accent-dim); transform: translateY(-2px); }
     .case-cover {
-      height: 280px;
-      position: relative;
-      overflow: hidden;
-    }
-    .case-cover-img {
-      width: 100%; height: 100%;
-      transition: transform var(--dur-slow) var(--ease-out);
-    }
-    .case-card:hover .case-cover-img { transform: scale(1.04); }
-    .case-cover-1 { background: linear-gradient(135deg, #3A2A1F 0%, #1F1410 100%); }
-    .case-cover-2 { background: linear-gradient(135deg, #1F2A3A 0%, #08182A 100%); }
-    .case-cover-3 { background: linear-gradient(135deg, #2A1F2A 0%, #1A0F1A 100%); }
-    .case-cover-4 { background: linear-gradient(135deg, #1F2A1F 0%, #0F1A0F 100%); }
-
-    .case-cover-overlay {
-      position: absolute;
-      inset: 0;
+      padding: 36px 32px 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(244, 244, 237, 0.4);
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
     }
-    .case-logo {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
+    .case-industry {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 6px 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    .case-headline-num {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(40px, 5vw, 64px);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+      margin-top: 32px;
+      padding: 0 32px;
+    }
+    .case-headline-num em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+    .case-headline-label {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 8px 32px 0;
+    }
+    .case-body {
+      padding: 24px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+    .case-brand {
       font-family: var(--sans);
       font-weight: 500;
       font-size: 22px;
       letter-spacing: -0.02em;
       color: var(--text);
     }
-    .case-logo.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
-    .case-logo.thin { font-weight: 300; font-size: 26px; letter-spacing: -0.04em; }
-    .case-logo.tracked { font-size: 14px; letter-spacing: 0.32em; text-transform: uppercase; }
+    .case-brand.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .case-brand.tracked { font-size: 14px; letter-spacing: 0.32em; text-transform: uppercase; }
+    .case-brand.thin { font-weight: 300; font-size: 26px; letter-spacing: -0.04em; }
 
-    .case-body {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      flex: 1;
-    }
     .case-narrative {
       font-family: var(--sans);
       font-size: 14px;
-      line-height: 1.6;
-      color: rgba(244, 244, 237, 0.7);
+      line-height: 1.65;
+      color: rgba(244, 244, 237, 0.72);
     }
-    .case-stat-row {
+    .case-narrative strong { color: var(--text); font-weight: 500; }
+
+    .case-results {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
-      align-items: baseline;
-      gap: 16px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+      flex-direction: column;
+      gap: 10px;
     }
-    .case-stat-num {
+    .case-results li {
       font-family: var(--sans);
-      font-weight: 500;
-      font-size: 48px;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(244, 244, 237, 0.78);
+      padding-left: 22px;
+      position: relative;
     }
-    .case-stat-num em {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
+    .case-results li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 12px; height: 1px;
+      background: var(--accent);
     }
-    .case-stat-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      line-height: 1.4;
-      flex: 1;
-    }
+    .case-results li strong { color: var(--text); font-weight: 500; }
+
     .case-tags-row {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 8px;
     }
     .case-tag {
-      font-family: var(--mono);
+      font-family: var(--sans);
       font-size: 10px;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       padding: 6px 12px;
       border: 1px solid var(--line-strong);
-      border-radius: 2px;
+      border-radius: 100px;
       color: var(--text-dim);
     }
-    .case-link {
+    .cases-more { text-align: center; margin-top: 56px; }
+    .cases-more a { font-family: var(--sans); font-weight: 500; font-size: 16px; color: var(--accent); letter-spacing: -0.01em; }
+
+    @media (max-width: 880px) {
+      .cases-grid { grid-template-columns: 1fr; }
+      .case-cover { padding: 24px 24px 0; }
+      .case-headline-num { padding: 0 24px; margin-top: 20px; }
+      .case-headline-label { padding: 8px 24px 0; }
+      .case-body { padding: 20px 24px 24px; }
+    }
+
+    /* ==============================================================
+       GUARANTEE :: clean, confident, single CTA, NO broken stamp box
+    ============================================================== */
+    .guarantee-section {
+      padding: var(--section-pad) 0;
+      border-top: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .guarantee-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%; max-width: 700px;
+      aspect-ratio: 1;
+      background: radial-gradient(circle, rgba(212, 179, 106, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .guarantee-inner {
+      position: relative;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .guarantee-section .kicker {
+      margin-bottom: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .guarantee-section .kicker::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulseDot 2.5s var(--ease-out) infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .guarantee-headline {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(32px, 5.5vw, 64px);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin: 0 auto 32px;
+      max-width: 22ch;
+    }
+    .guarantee-headline em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+    .guarantee-body {
+      font-family: var(--sans);
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 1.6;
+      color: rgba(244, 244, 237, 0.78);
+      max-width: 56ch;
+      margin: 0 auto 40px;
+    }
+    .guarantee-body strong { color: var(--text); font-weight: 500; }
+    .guarantee-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .guarantee-cta-row .btn { padding: 16px 28px; font-size: 15px; }
+    .guarantee-tagline {
       font-family: var(--sans);
       font-weight: 500;
       font-size: 13px;
-      color: var(--accent);
-      align-self: flex-start;
-      margin-top: auto;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
     }
-    .cases-more {
-      text-align: center;
-      margin-top: 56px;
-    }
-    .cases-more a {
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: 16px;
-      color: var(--accent);
-      letter-spacing: -0.01em;
-    }
-    @media (max-width: 880px) {
-      .cases-grid { grid-template-columns: 1fr; }
-      .case-cover { height: 220px; }
-      .case-body { padding: 24px; }
-      .case-stat-num { font-size: 40px; }
+    .guarantee-tagline strong { color: var(--accent); font-weight: 600; }
+    @media (max-width: 600px) {
+      .guarantee-cta-row { flex-direction: column; gap: 20px; }
+      .guarantee-cta-row .btn { width: 100%; max-width: 320px; justify-content: center; }
     }
 
-    /* ============================================================
+    /* ==============================================================
        MID-PAGE CTA
-    ============================================================ */
-    .mid-cta {
-      padding: var(--section-pad) 0;
-      text-align: center;
-    }
+    ============================================================== */
+    .mid-cta { padding: var(--section-pad) 0; text-align: center; }
     .mid-cta .kicker { margin-bottom: 32px; }
-    .mid-cta h2 {
-      max-width: 22ch;
-      margin: 0 auto 24px;
-    }
-    .mid-cta .lead {
-      margin: 0 auto 40px;
-      max-width: 50ch;
-    }
+    .mid-cta h2 { max-width: 22ch; margin: 0 auto 24px; }
+    .mid-cta .lead { margin: 0 auto 40px; max-width: 50ch; }
 
-    /* ============================================================
+    /* ==============================================================
        FAQ
-    ============================================================ */
-    .faq-section {
-      padding: var(--section-pad) 0;
-      border-top: 1px solid var(--line);
-    }
+    ============================================================== */
+    .faq-section { padding: var(--section-pad) 0; border-top: 1px solid var(--line); }
     .faq-section .kicker { margin-bottom: 48px; }
-    .faq-list {
-      max-width: 920px;
-      margin: 0 auto;
-      border-top: 1px solid var(--line);
-    }
-    .faq-row {
-      border-bottom: 1px solid var(--line);
-    }
+    .faq-list { max-width: 920px; margin: 0 auto; border-top: 1px solid var(--line); }
+    .faq-row { border-bottom: 1px solid var(--line); }
     .faq-trigger {
       width: 100%;
       display: flex;
@@ -1135,8 +945,7 @@
       color: var(--text);
       transition: color var(--dur-fast);
     }
-    .faq-trigger:hover .faq-q,
-    .faq-row.open .faq-q { color: var(--accent); }
+    .faq-trigger:hover .faq-q, .faq-row.open .faq-q { color: var(--accent); }
     .faq-icon {
       width: 24px; height: 24px;
       color: var(--accent);
@@ -1149,11 +958,12 @@
     }
     .faq-row.open .faq-icon { transform: rotate(45deg); }
     .faq-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height var(--dur-slow) var(--ease-out);
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--dur-base) var(--ease-out);
     }
-    .faq-row.open .faq-body { max-height: 500px; }
+    .faq-row.open .faq-body { grid-template-rows: 1fr; }
+    .faq-body-inner-wrap { overflow: hidden; min-height: 0; }
     .faq-body-inner {
       padding: 0 0 28px;
       max-width: 60ch;
@@ -1162,13 +972,10 @@
       color: rgba(244, 244, 237, 0.72);
     }
 
-    /* ============================================================
+    /* ==============================================================
        FOOTER
-    ============================================================ */
-    .footer {
-      padding: var(--section-pad) 0 32px;
-      border-top: 1px solid var(--line);
-    }
+    ============================================================== */
+    .footer { padding: var(--section-pad) 0 32px; border-top: 1px solid var(--line); }
     .footer-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 0.5fr;
@@ -1194,14 +1001,8 @@
       margin-bottom: 24px;
       max-width: 30ch;
     }
-    .footer-mark {
-      display: flex;
-      justify-content: flex-end;
-    }
-    .footer-mark svg {
-      width: 88px; height: 88px;
-      opacity: 0.85;
-    }
+    .footer-mark { display: flex; justify-content: flex-end; }
+    .footer-mark svg { width: 88px; height: 88px; opacity: 0.85; }
     .footer-bottom {
       padding-top: 32px;
       border-top: 1px solid var(--line);
@@ -1211,22 +1012,17 @@
       gap: 24px;
       flex-wrap: wrap;
     }
+    /* Footer copy :: using sans, NOT mono */
     .footer-copy {
-      font-family: var(--mono);
-      font-size: 11px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 12px;
       letter-spacing: 0.08em;
       color: var(--text-muted);
+      text-transform: uppercase;
     }
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-    .footer-links a {
-      font-family: var(--sans);
-      font-size: 13px;
-      color: var(--text-dim);
-      transition: color var(--dur-fast);
-    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-family: var(--sans); font-size: 13px; color: var(--text-dim); transition: color var(--dur-fast); }
     .footer-links a:hover { color: var(--text); }
     @media (max-width: 880px) {
       .footer-grid { grid-template-columns: 1fr; gap: 56px; padding-bottom: 56px; }
@@ -1234,27 +1030,18 @@
       .footer-mark svg { width: 64px; height: 64px; }
     }
 
-    /* ============================================================
-       SCROLL REVEAL
-    ============================================================ */
+    /* Reveal animation */
     .reveal {
       opacity: 0;
       transform: translateY(16px);
       transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
     }
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
 
-    /* ============================================================
-       MOBILE TYPOGRAPHY ADJUSTMENTS
-    ============================================================ */
     @media (max-width: 600px) {
       .hero { min-height: auto; padding-top: calc(var(--nav-h) + 64px); padding-bottom: 64px; }
       .hero-ctas { flex-direction: column; align-items: center; width: 100%; }
       .hero-ctas .btn { width: 100%; max-width: 320px; justify-content: center; }
-      .stats-grid { gap: 40px 24px; }
       .service-name { font-size: 22px; }
       .case-card { border-radius: 6px; }
     }
@@ -1262,9 +1049,6 @@
 </head>
 <body>
 
-  <!-- ═════════════════════════════════════════════════════════
-       NAVIGATION
-  ═════════════════════════════════════════════════════════ -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#top" class="logo" aria-label="retainr home">
@@ -1278,7 +1062,7 @@
         <li><a class="nav-link" href="#services">Services</a></li>
         <li><a class="nav-link" href="#work">Work</a></li>
         <li><a class="nav-link" href="#case-studies">Case Studies</a></li>
-        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#guarantee">Guarantee</a></li>
         <li><a class="nav-link" href="#faq">FAQ</a></li>
       </ul>
 
@@ -1293,7 +1077,7 @@
       <a class="nav-mobile-link" href="#services">Services</a>
       <a class="nav-mobile-link" href="#work">Work</a>
       <a class="nav-mobile-link" href="#case-studies">Case Studies</a>
-      <a class="nav-mobile-link" href="#about">About</a>
+      <a class="nav-mobile-link" href="#guarantee">Guarantee</a>
       <a class="nav-mobile-link" href="#faq">FAQ</a>
       <a href="#contact" class="btn btn-primary nav-mobile-cta">Get in touch</a>
     </div>
@@ -1301,111 +1085,110 @@
 
   <main id="top">
 
-  <!-- ═════════════════════════════════════════════════════════
-       HERO
-  ═════════════════════════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-content">
-      <span class="kicker">Klaviyo certified</span>
+      <span class="kicker">Klaviyo Certified · Email &amp; SMS</span>
       <h1 class="display">Email that <em>earns its keep.</em></h1>
-      <p class="lead">Lifecycle email programs for D2C brands focused on repeat revenue. Strategy, copy, design, and deliverability, owned end to end.</p>
+      <p class="lead">We make email 40% of your store revenue within 60 days. If we don't, you don't pay. Lifecycle email marketing systems for D2C brands focused on repeat revenue.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">
-          Get in touch
+          Book my free audit
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
           </svg>
         </a>
-        <a href="#case-studies" class="btn btn-secondary">Case Studies</a>
+        <a href="#case-studies" class="btn btn-secondary">See the work</a>
       </div>
+
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       CLIENT LOGO MARQUEE
-  ═════════════════════════════════════════════════════════ -->
   <section class="marquee-section" aria-label="Client brands">
     <div class="marquee-track">
-      <span class="client-logo">FAUNA</span>
-      <span class="client-logo serif">Northbound</span>
-      <span class="client-logo tracked">BRIGHTLEAF</span>
-      <span class="client-logo thin">marlow</span>
-      <span class="client-logo">RIDGE &amp; CO</span>
-      <span class="client-logo serif">Atelier No.7</span>
-      <span class="client-logo tracked">VESSEL</span>
-      <span class="client-logo">HEMLOCK</span>
-      <span class="client-logo thin">odeon</span>
-      <span class="client-logo serif">Maison Lune</span>
-      <span class="client-logo tracked">PAPER &amp; OAK</span>
-      <span class="client-logo">Stillwater</span>
-      <!-- duplicate for seamless loop -->
-      <span class="client-logo">FAUNA</span>
-      <span class="client-logo serif">Northbound</span>
-      <span class="client-logo tracked">BRIGHTLEAF</span>
-      <span class="client-logo thin">marlow</span>
-      <span class="client-logo">RIDGE &amp; CO</span>
-      <span class="client-logo serif">Atelier No.7</span>
-      <span class="client-logo tracked">VESSEL</span>
-      <span class="client-logo">HEMLOCK</span>
-      <span class="client-logo thin">odeon</span>
-      <span class="client-logo serif">Maison Lune</span>
-      <span class="client-logo tracked">PAPER &amp; OAK</span>
-      <span class="client-logo">Stillwater</span>
+      <span class="client-logo bold">AirAura.</span>
+      <span class="client-logo bold">BosleyMD</span>
+      <span class="client-logo bold">WILD EARTH</span>
+      <span class="client-logo bold">D-ROBE</span>
+      <span class="client-logo serif">Vape At Door</span>
+      <span class="client-logo tracked">VITAL RISE</span>
+      <span class="client-logo">Heavenly Boxes</span>
+      <span class="client-logo serif">Twinky</span>
+      <span class="client-logo bold">GUNNER HOUND</span>
+      <span class="client-logo thin">ableton</span>
+      <span class="client-logo">Pop-up Tee</span>
+      <span class="client-logo tracked">ROYAL ARMS</span>
+      <span class="client-logo">US Boot</span>
+      <span class="client-logo serif">Syalz</span>
+      <span class="client-logo">Caliduo</span>
+      <span class="client-logo tracked">SCENTIONAL</span>
+      <span class="client-logo">Webside</span>
+      <span class="client-logo serif">Essence</span>
+      <span class="client-logo bold">AirAura.</span>
+      <span class="client-logo bold">BosleyMD</span>
+      <span class="client-logo bold">WILD EARTH</span>
+      <span class="client-logo bold">D-ROBE</span>
+      <span class="client-logo serif">Vape At Door</span>
+      <span class="client-logo tracked">VITAL RISE</span>
+      <span class="client-logo">Heavenly Boxes</span>
+      <span class="client-logo serif">Twinky</span>
+      <span class="client-logo bold">GUNNER HOUND</span>
+      <span class="client-logo thin">ableton</span>
+      <span class="client-logo">Pop-up Tee</span>
+      <span class="client-logo tracked">ROYAL ARMS</span>
+      <span class="client-logo">US Boot</span>
+      <span class="client-logo serif">Syalz</span>
+      <span class="client-logo">Caliduo</span>
+      <span class="client-logo tracked">SCENTIONAL</span>
+      <span class="client-logo">Webside</span>
+      <span class="client-logo serif">Essence</span>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       WORK SHOWCASE
-  ═════════════════════════════════════════════════════════ -->
   <section class="work-section" id="work" aria-label="Selected work">
     <div class="work-row row-1" id="workRow1"></div>
     <div class="work-row row-2" id="workRow2"></div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       STATS
-  ═════════════════════════════════════════════════════════ -->
   <section class="stats-section">
     <div class="container">
       <div class="stats-grid">
         <div class="stat reveal">
-          <div class="stat-num"><em>$</em><span class="stat-counter" data-target="3.2" data-suffix="M+">$0M+</span></div>
+          <div class="stat-num"><em>$</em><span class="stat-counter" data-target="40" data-suffix="M+">$0M+</span></div>
           <div class="stat-label">Attributed Revenue</div>
         </div>
         <div class="stat reveal">
-          <div class="stat-num"><span class="stat-counter" data-target="12" data-suffix="">0</span></div>
+          <div class="stat-num"><span class="stat-counter" data-target="40" data-suffix="">0</span></div>
           <div class="stat-label">Brand Partners</div>
         </div>
         <div class="stat reveal">
-          <div class="stat-num"><span class="stat-counter" data-target="40" data-suffix="">0</span><em>%</em></div>
+          <div class="stat-num"><span class="stat-counter" data-target="30" data-suffix="">0</span><em>%</em></div>
           <div class="stat-label">Repeat Revenue</div>
         </div>
         <div class="stat reveal">
-          <div class="stat-num"><span class="stat-counter" data-target="15" data-suffix="">0</span><em>×</em></div>
-          <div class="stat-label">Average ROI</div>
+          <div class="stat-num"><span class="stat-counter" data-target="15" data-suffix="">0</span><em>&times;</em></div>
+          <div class="stat-label">Avg Email ROI</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       SERVICES
-  ═════════════════════════════════════════════════════════ -->
   <section class="services-section" id="services">
     <div class="container">
       <span class="kicker reveal">Our services</span>
-      <h2 class="h2 reveal">Built around <em>retention,</em> not opens.</h2>
+      <h2 class="h2 reveal" style="margin-top: 24px;">Built around <em>maximizing revenue</em> from your one time customers.</h2>
 
       <div class="services-list">
         <div class="service-row open" data-service="0">
           <button class="service-trigger" aria-expanded="true">
-            <span class="service-name"><em class="service-num">01.</em>Lifecycle Email</span>
+            <span class="service-name"><em class="service-num">01.</em>Lifecycle Email &amp; SMS</span>
             <span class="service-icon" aria-hidden="true">+</span>
           </button>
           <div class="service-body">
-            <div class="service-body-inner">
-              <p>Build email programs that drive repeat purchases. Welcome flows, post-purchase, abandoned cart, replenishment, and win-back. Klaviyo-native, segment-driven, and rebuilt every quarter as your data sharpens.</p>
-              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Get email campaigns and flows that drive repeat purchases. This covers your Welcome flows, post-purchase, abandoned cart, replenishment, and win-back. Klaviyo-native, segment-driven, and rebuilt as your data sharpens or needs arise.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1416,9 +1199,11 @@
             <span class="service-icon" aria-hidden="true">+</span>
           </button>
           <div class="service-body">
-            <div class="service-body-inner">
-              <p>Promotional sends that protect deliverability and drive revenue. Calendar planning, segmentation, copy, design, send orchestration, and weekly performance review.</p>
-              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Promotional sends that protect deliverability and drive revenue. Calendar planning, segmentation, copy, design, send time optimization, A/B testing, and weekly performance review.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1429,22 +1214,26 @@
             <span class="service-icon" aria-hidden="true">+</span>
           </button>
           <div class="service-body">
-            <div class="service-body-inner">
-              <p>Inbox placement is the hidden multiplier on every send. We monitor reputation, authentication, list hygiene, complaint rates, and engagement quality. Permanent service, not a one-off audit.</p>
-              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Inbox placement is the hidden multiplier on every send. We monitor reputation, authentication, list hygiene, complaint rates, engagement quality. Permanent service, not a one-time audit. Most clients see deliverability move from 84% to 97% in three months.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="service-row" data-service="3">
           <button class="service-trigger" aria-expanded="false">
-            <span class="service-name"><em class="service-num">04.</em>Strategy &amp; Audit</span>
+            <span class="service-name"><em class="service-num">04.</em>Audit &amp; Strategy</span>
             <span class="service-icon" aria-hidden="true">+</span>
           </button>
           <div class="service-body">
-            <div class="service-body-inner">
-              <p>Senior eyes on your existing program. Full audit, lifecycle architecture, and ongoing advisory engagements for in-house teams that need direction.</p>
-              <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Senior eyes on your existing program. Free audit if there's fit. Then optional strategy retainers for in-house teams that need direction without the full-service price tag.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1452,9 +1241,6 @@
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       PLATFORMS
-  ═════════════════════════════════════════════════════════ -->
   <section class="platforms-section">
     <div class="container">
       <div class="platforms-grid-wrapper">
@@ -1474,64 +1260,61 @@
         </div>
         <div class="platforms-copy reveal">
           <span class="kicker">Platform Certified</span>
-          <h3 class="h2" style="font-size: clamp(22px, 2.5vw, 32px); margin-bottom: 20px;">Klaviyo first. <em>Stack chosen per brand.</em></h3>
-          <p class="body-text">We specialize in Klaviyo for D2C retention and partner with the platforms below for full-stack execution. Dedicated support and access to product roadmaps before they ship.</p>
+          <h3 class="h2" style="font-size: clamp(24px, 2.8vw, 36px); margin: 0 0 20px;">Klaviyo first. <em>Stack chosen per brand.</em></h3>
+          <p class="body-text">We specialize in Klaviyo for D2C retention, plus partner with the platforms below for full-stack execution. Dedicated support and product roadmap access before they ship.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       TESTIMONIALS
-  ═════════════════════════════════════════════════════════ -->
   <section class="testimonials-section">
     <div class="container">
       <span class="kicker">Testimonials</span>
-      <div class="testimonials-track-wrapper">
+      <div class="testimonials-track-wrapper" id="testWrapper">
         <div class="testimonials-track" id="testimonialsTrack">
 
           <div class="testimonial-card">
             <div class="testimonial-tag">Satisfied client</div>
-            <p class="testimonial-quote">"retainr rebuilt our flow architecture in six weeks. Q4 attributed revenue went up 40 percent without us sending more campaigns. They actually treat retention like an engineering problem."</p>
+            <p class="testimonial-quote">"Haseeb is a big professional. Every question we had he provided very detailed answers. Highly responsive, always willing to help, and recorded detailed walkthroughs so we could reproduce things after the collaboration."</p>
             <div class="testimonial-attr">
-              <div class="testimonial-name">Sara Chen</div>
-              <div class="testimonial-title">Founder, Fauna Skincare</div>
+              <div class="testimonial-name">Game Biz</div>
+              <div class="testimonial-title">Founder &amp; CEO</div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-tag">Satisfied client</div>
-            <p class="testimonial-quote">"Most agencies optimize for opens. retainr is the first team we've worked with that owns deliverability as a permanent service. Inbox placement went from 84 percent to 97 percent in three months."</p>
+            <p class="testimonial-quote">"I've been working with retainr for our email marketing campaigns and the results have been outstanding. Their strategy is clear, targeted, and highly effective. Highly recommended for anyone serious about email."</p>
             <div class="testimonial-attr">
-              <div class="testimonial-name">Marcus Webb</div>
-              <div class="testimonial-title">Head of Marketing, Northbound</div>
+              <div class="testimonial-name">Vape At Door</div>
+              <div class="testimonial-title">Founder &amp; CEO</div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-tag">Satisfied client</div>
-            <p class="testimonial-quote">"Our welcome series was leaking customers. They diagnosed it, rebuilt it, and walked us through every decision. We learned more about Klaviyo in three months than the previous two years."</p>
+            <p class="testimonial-quote">"Very happy with Haseeb's team on guiding the email marketing process. They moved us from no system to a real revenue channel in weeks, not months."</p>
             <div class="testimonial-attr">
-              <div class="testimonial-name">Priya Patel</div>
-              <div class="testimonial-title">Director of Retention, Brightleaf</div>
+              <div class="testimonial-name">Twinky Store</div>
+              <div class="testimonial-title">Founder &amp; CEO</div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-tag">Satisfied client</div>
-            <p class="testimonial-quote">"The audit alone was worth more than what some agencies charge for a full engagement. Then they actually executed on it. Twelve months in, retention is the strongest channel in the business."</p>
+            <p class="testimonial-quote">"We're thankful that we chose your agency. With a Fox News feature five days out and zero email infrastructure, they built everything from scratch. Flows alone drove 15% of revenue from the spotlight."</p>
             <div class="testimonial-attr">
-              <div class="testimonial-name">Jonas Reid</div>
-              <div class="testimonial-title">Founder, Marlow</div>
+              <div class="testimonial-name">Jack</div>
+              <div class="testimonial-title">Founder, US Boot</div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-tag">Satisfied client</div>
-            <p class="testimonial-quote">"Fixed monthly pricing with explicit deliverable scope. No vague retainers. Knowing exactly what we're getting each month has changed how we plan the entire program."</p>
+            <p class="testimonial-quote">"WOW. Now that is an upgrade. Their first new campaign designs were a step-change from anything we'd had before. The whole brand started feeling more premium overnight."</p>
             <div class="testimonial-attr">
-              <div class="testimonial-name">Emma Lindqvist</div>
-              <div class="testimonial-title">CMO, Atelier No.7</div>
+              <div class="testimonial-name">Elijah Canfield</div>
+              <div class="testimonial-title">Founder, Pop-up Tee</div>
             </div>
           </div>
 
@@ -1540,127 +1323,136 @@
 
       <div class="testimonials-controls">
         <button class="carousel-btn" id="testPrev" aria-label="Previous testimonial">←</button>
+        <div class="carousel-dots" id="testDots"></div>
         <button class="carousel-btn" id="testNext" aria-label="Next testimonial">→</button>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       CASE STUDIES
-  ═════════════════════════════════════════════════════════ -->
   <section class="cases-section" id="case-studies">
     <div class="container">
       <span class="kicker">Case studies</span>
+      <h2 class="h2" style="margin-top: 24px;">Proof, <em>not promises.</em></h2>
 
       <div class="cases-grid">
-        <article class="case-card reveal">
-          <div class="case-cover case-cover-1">
-            <div class="case-cover-img"></div>
-            <div class="case-cover-overlay">[Case study cover image]</div>
-            <div class="case-logo serif">Fauna</div>
-          </div>
-          <div class="case-body">
-            <p class="case-narrative">Fauna went into Q4 with a leaky welcome series and untargeted campaigns. We rebuilt the entire flow architecture in six weeks. Q4 attributed revenue grew 197 percent year over year.</p>
-            <div class="case-stat-row">
-              <div class="case-stat-num"><em>+</em>197<em>%</em></div>
-              <div class="case-stat-label">Q4 attributed<br>revenue, YoY</div>
-            </div>
-            <div class="case-tags-row">
-              <span class="case-tag">Lifecycle</span>
-              <span class="case-tag">Campaigns</span>
-            </div>
-            <a href="#contact" class="case-link">See case &nbsp;→</a>
-          </div>
-        </article>
 
         <article class="case-card reveal">
-          <div class="case-cover case-cover-2">
-            <div class="case-cover-img"></div>
-            <div class="case-cover-overlay">[Case study cover image]</div>
-            <div class="case-logo">Northbound</div>
+          <div class="case-cover">
+            <div class="case-brand serif">Skincare Lab</div>
+            <span class="case-industry">Skincare &amp; Biotech</span>
           </div>
+          <div class="case-headline-num"><em>$</em>1<em>M+</em></div>
+          <div class="case-headline-label">Klaviyo attributed in 4 months</div>
           <div class="case-body">
-            <p class="case-narrative">Northbound needed lifecycle and campaign systems that scaled with their subscription growth. Twelve months in, email and SMS attributed revenue is up 159 percent.</p>
-            <div class="case-stat-row">
-              <div class="case-stat-num"><em>+</em>159<em>%</em></div>
-              <div class="case-stat-label">YoY email +<br>SMS attributed</div>
-            </div>
+            <p class="case-narrative">A skincare and biotech brand wanted retention to become a real revenue channel. We rebuilt campaigns, flows, email and SMS together. Four months in, Klaviyo was driving <strong>52% of total store revenue</strong>.</p>
+            <ul class="case-results">
+              <li><strong>Q4 2025:</strong> $380K attributed, up 999% vs prior</li>
+              <li><strong>Jan-Feb 2026:</strong> $682K, up another 122%</li>
+              <li><strong>Deliverability score 90/100:</strong> 48.4% open, 0.31% bounce</li>
+            </ul>
             <div class="case-tags-row">
               <span class="case-tag">Lifecycle</span>
               <span class="case-tag">SMS</span>
+              <span class="case-tag">Deliverability</span>
             </div>
-            <a href="#contact" class="case-link">See case &nbsp;→</a>
           </div>
         </article>
 
         <article class="case-card reveal">
-          <div class="case-cover case-cover-3">
-            <div class="case-cover-img"></div>
-            <div class="case-cover-overlay">[Case study cover image]</div>
-            <div class="case-logo tracked">BRIGHTLEAF</div>
+          <div class="case-cover">
+            <div class="case-brand">US Boot</div>
+            <span class="case-industry">Footwear</span>
           </div>
+          <div class="case-headline-num">15<em>%</em></div>
+          <div class="case-headline-label">Of total revenue from flows alone</div>
           <div class="case-body">
-            <p class="case-narrative">Brightleaf partnered with us during rapid acquisition growth. We built a retention engine that reduced early churn and lifted flow-attributed revenue 50 percent in the first quarter.</p>
-            <div class="case-stat-row">
-              <div class="case-stat-num"><em>+</em>50<em>%</em></div>
-              <div class="case-stat-label">Flow attributed<br>revenue lift</div>
-            </div>
+            <p class="case-narrative">Texas-made boot brand was about to be featured on Fox News with <strong>zero email setup</strong>. No flows, no popup, no list. We built the full system in <strong>5 days</strong> and captured the spotlight traffic before it hit the homepage.</p>
+            <ul class="case-results">
+              <li><strong>Flows live in 5 days:</strong> welcome, cart, browse, post-purchase</li>
+              <li><strong>Two popup forms shipped:</strong> time-delay and exit-intent</li>
+              <li><strong>15% of total revenue</strong> from flows alone, post-feature</li>
+            </ul>
             <div class="case-tags-row">
-              <span class="case-tag">Lifecycle</span>
-              <span class="case-tag">Subscriptions</span>
+              <span class="case-tag">Flows</span>
+              <span class="case-tag">List Growth</span>
+              <span class="case-tag">Speed</span>
             </div>
-            <a href="#contact" class="case-link">See case &nbsp;→</a>
           </div>
         </article>
 
         <article class="case-card reveal">
-          <div class="case-cover case-cover-4">
-            <div class="case-cover-img"></div>
-            <div class="case-cover-overlay">[Case study cover image]</div>
-            <div class="case-logo thin">marlow</div>
+          <div class="case-cover">
+            <div class="case-brand serif">Vape At Door</div>
+            <span class="case-industry">UK D2C</span>
           </div>
+          <div class="case-headline-num">30<em>%</em></div>
+          <div class="case-headline-label">Of monthly store revenue</div>
           <div class="case-body">
-            <p class="case-narrative">Marlow needed a unified retention strategy across email, SMS, and loyalty. We delivered a coordinated program that has generated $1.9M+ in attributed revenue over twelve months.</p>
-            <div class="case-stat-row">
-              <div class="case-stat-num"><em>$</em>1.9M<em>+</em></div>
-              <div class="case-stat-label">Total<br>attributed</div>
-            </div>
+            <p class="case-narrative">Designs were cluttered, off-brand, and not built to convert. The founder was tired of "pretty" emails that didn't sell. We rebuilt every template around <strong>one job: drive the click</strong>. Customers now compliment the emails. Email owns 30% of monthly revenue.</p>
+            <ul class="case-results">
+              <li><strong>Templates rebuilt:</strong> conversion-led, brand-aligned</li>
+              <li><strong>30% of total revenue</strong> from email, sustained monthly</li>
+              <li><strong>Customer feedback flipped:</strong> indifferent to actively praising</li>
+            </ul>
             <div class="case-tags-row">
-              <span class="case-tag">Lifecycle</span>
-              <span class="case-tag">Loyalty</span>
+              <span class="case-tag">Campaigns</span>
+              <span class="case-tag">Design</span>
+              <span class="case-tag">Brand</span>
             </div>
-            <a href="#contact" class="case-link">See case &nbsp;→</a>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="case-cover">
+            <div class="case-brand serif">Twinky</div>
+            <span class="case-industry">Baby Products · NL</span>
+          </div>
+          <div class="case-headline-num">19<em>×</em></div>
+          <div class="case-headline-label">Campaign revenue lift</div>
+          <div class="case-body">
+            <p class="case-narrative">Dutch baby brand whose campaigns drove just <strong>0.51% of revenue</strong>. The team had given up on email as a meaningful channel. We installed a monthly rhythm, mixed promotional with educational, and rebuilt designs around the brand's actual identity.</p>
+            <ul class="case-results">
+              <li><strong>Campaign revenue:</strong> 0.51% to 9.89% in three months</li>
+              <li><strong>Branded templates</strong> built for conversion, not decoration</li>
+              <li><strong>Monthly send rhythm</strong> replaced ad-hoc execution</li>
+            </ul>
+            <div class="case-tags-row">
+              <span class="case-tag">Campaigns</span>
+              <span class="case-tag">Strategy</span>
+            </div>
           </div>
         </article>
 
       </div>
 
       <div class="cases-more">
-        <a href="#contact" class="btn-arrow">View all case studies <span>→</span></a>
+        <a href="#contact" class="btn-arrow">See all case studies <span>→</span></a>
       </div>
     </div>
   </section>
 
   <!-- ═════════════════════════════════════════════════════════
-       MID-PAGE CTA
+       GUARANTEE :: clean, no broken stamp box
   ═════════════════════════════════════════════════════════ -->
-  <section class="mid-cta" id="contact">
+  <section class="guarantee-section" id="guarantee">
+    <span id="contact" aria-hidden="true"></span>
     <div class="container">
-      <span class="kicker">Considering working together?</span>
-      <h2 class="h2">Send us a note. We'll send back an audit of your current program. <em>What's working, what's costing you, and what we'd do in the first 30 days.</em></h2>
-      <p class="lead">Free. Genuinely useful. No pitch deck.</p>
-      <a href="mailto:hello@retainr.co" class="btn btn-primary">
-        Get in touch
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-        </svg>
-      </a>
+      <div class="guarantee-inner">
+        <span class="kicker">60-Day Contractual Promise</span>
+        <h2 class="guarantee-headline">Email becomes <em>40% of your store revenue</em> in 60 days, or you don't pay.</h2>
+        <p class="guarantee-body">We put it in writing. If our system doesn't drive at least <strong>40% of your store's total revenue</strong> within 60 days of going live, you get every dollar back. No fine print. No clawbacks. No "yeah but."</p>
+        <div class="guarantee-cta-row">
+          <a href="#contact" class="btn btn-primary">
+            Yes, book my free audit
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════════
-       FAQ
-  ═════════════════════════════════════════════════════════ -->
   <section class="faq-section" id="faq">
     <div class="container">
       <span class="kicker">FAQ</span>
@@ -1671,7 +1463,9 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">Lifecycle email programs for D2C brands. Strategy, copy, design, and deliverability, owned end to end. Klaviyo is our primary platform.</div>
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Lifecycle email marketing systems for D2C brands focused on repeat revenue. We handle strategy, copy, design, and implementation from end to end, so you don't have to. Klaviyo is our primary platform.</div>
+            </div>
           </div>
         </div>
 
@@ -1681,7 +1475,21 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">Founder-led D2C brands with strong product but under-architected email. Twelve current partners across skincare, apparel, supplements, food, and home. Average tenure fourteen months.</div>
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Founder-led D2C brands with strong product but under-built email. 30+ partners across skincare, fashion, supplements, food, footwear, baby products, vape, home. Average tenure 14 months.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">Is the 60-day guarantee real?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Yes. It's in the contract. If our system doesn't drive at least 40% of your store's total revenue within 60 days of going live, you get every dollar back. No clawbacks, no fine print. We can do this because we've done it 30+ times.</div>
+            </div>
           </div>
         </div>
 
@@ -1691,17 +1499,21 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">Klaviyo for email and SMS. Postscript or Attentive when those are already in place. Recharge or Skio for subscriptions. Yotpo or Junip for reviews. Stack picked per brand, not by default.</div>
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Klaviyo for email and SMS, primary. Postscript or Attentive when those are already in place. Recharge or Skio for subscriptions. Yotpo or Junip for reviews. Stack picked per brand.</div>
+            </div>
           </div>
         </div>
 
         <div class="faq-row">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-q">How is retainr different from a traditional agency?</span>
+            <span class="faq-q">How is retainr different from other agencies?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">We optimize for attributed revenue, not opens. We own deliverability operations as a permanent service. We bill fixed monthly with explicit deliverable scope, not vague retainers.</div>
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">We optimize for attributed revenue, not vanity metrics like open rates unless needed. We own subscriber list growth optimization and deliverability score improvement as a permanent service. We bill fixed monthly with explicit deliverable scope.</div>
+            </div>
           </div>
         </div>
 
@@ -1711,7 +1523,9 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">Pricing is fixed monthly, scoped to the program. Audits start at $5K. Strategy engagements start at $8K monthly. Full-service lifecycle programs start at $12K monthly. We don't take percentage-of-revenue deals.</div>
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Pricing is fixed monthly, scoped to the setup your brand needs. Audit is absolutely free. Strategy engagements start at $5K monthly. Full-service lifecycle programs start at $8K monthly. We don't take percentage-of-revenue deals.</div>
+            </div>
           </div>
         </div>
 
@@ -1721,25 +1535,25 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">Book a thirty-minute call. We'll ask three questions about your current program and book the audit if there's fit. The audit takes ten business days and is genuinely useful even if we don't end up working together.</div>
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Book a 30-minute call. Three questions about your current setup, then we book the audit if there's fit. Audit takes ten business days. Useful even if we don't end up working together.</div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   </main>
 
-  <!-- ═════════════════════════════════════════════════════════
-       FOOTER
-  ═════════════════════════════════════════════════════════ -->
-  <footer class="footer" id="about">
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <span class="kicker">Want to talk?</span>
-          <h3>Send a note. We respond within one business day.</h3>
-          <p>Three questions and a calendar link, no boilerplate.</p>
+          <h3>Send a note. We respond in one business day.</h3>
+          <p>Three questions, a calendar link, no boilerplate.</p>
           <a href="mailto:hello@retainr.co" class="btn btn-primary">
             Get in touch
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -1771,14 +1585,11 @@
     </div>
   </footer>
 
-  <!-- ═════════════════════════════════════════════════════════
-       SCRIPTS
-  ═════════════════════════════════════════════════════════ -->
   <script>
   (function () {
     'use strict';
 
-    /* ─── 1. NAV: scroll state + mobile burger ─── */
+    /* Nav */
     const nav = document.getElementById('nav');
     const burger = document.getElementById('navBurger');
     const navMobile = document.getElementById('navMobile');
@@ -1808,55 +1619,41 @@
       });
     });
 
-    /* ─── 2. WORK SHOWCASE: build email mockup cards ─── */
-    const emailCards = [
-      { theme: 'e-skin', from: 'Fauna', subject: 'Your skin remembered you.', h: 'Welcome <em>back.</em>', p: 'A small thank-you, since you started this with us.', cta: 'Claim 15% off' },
-      { theme: 'e-luxury', from: 'Atelier No.7', subject: 'Reserved in your size.', h: 'Hold complete.', p: 'The piece you saved is back. Held for forty-eight hours.', cta: 'View piece' },
-      { theme: 'e-supplement', from: 'Brightleaf', subject: 'Time to restock.', h: 'Refill <em>ready.</em>', p: 'Last bottle was 28 days ago. Ship the next on us.', cta: 'Refill cart' },
-      { theme: 'e-coffee', from: 'Stillwater', subject: 'New roast just landed.', h: 'Ethiopia, day 3.', p: 'Floral, bright, slightly stone-fruit. 200 bags.', cta: 'Brew it' },
-      { theme: 'e-clean', from: 'Marlow', subject: 'You left this.', h: 'Cart held.', p: 'Saved your selection. Same prices, twenty-four hours.', cta: 'Resume' },
-      { theme: 'e-fashion', from: 'Northbound', subject: 'For members only.', h: 'Early <em>access.</em>', p: 'Forty-eight hours before the rest. Drop opens 9am EST.', cta: 'Shop drop' },
-      { theme: 'e-pet', from: 'Hemlock', subject: 'Tail wagging? Tell us.', h: 'Quick favor.', p: 'A real review helps another dog parent decide. Sixty seconds.', cta: 'Leave review' },
-      { theme: 'e-floral', from: 'Maison Lune', subject: 'Almost out.', h: 'Six left.', p: 'The Saturday box. Saturdays only. Six remaining.', cta: 'Reserve box' },
-      { theme: 'e-fitness', from: 'Ridge & Co', subject: '90 days strong.', h: 'Quarter <em>one</em> done.', p: 'You logged 47 sessions. Next quarter starts Monday.', cta: 'Plan Q2' },
-      { theme: 'e-mono', from: 'Vessel', subject: 'Your piece is ready.', h: 'Ready <em>to ship.</em>', p: 'Hand-finished this week. Shipping confirmation tomorrow.', cta: 'Track order' },
-      { theme: 'e-food', from: 'Paper & Oak', subject: 'Anniversary discount.', h: 'One year.', p: 'A year since your first order. Thank you, properly.', cta: 'Use 25% off' },
-      { theme: 'e-tech', from: 'Odeon', subject: 'Setup tip inside.', h: 'Day 7 <em>onboarding.</em>', p: 'The one setting most customers miss in the first week.', cta: 'Open guide' },
+    /* Work showcase :: real client work + custom mockups, max 2 per brand */
+    const emailImages = [
+      // Row 1: real client work interleaved with custom mockups
+      'img/email-airaura-review.jpg',
+      'img/email-drobe-sale.jpg',
+      'img/email-wildearth-welcome.jpg',
+      'img/email-royalarms-quarter.jpg',
+      'img/email-bosley-promo.jpg',
+      'img/email-vital-refill.jpg',
+      // Row 2: more variety
+      'img/email-airaura-browse.jpg',
+      'img/email-twinky-anniversary.jpg',
+      'img/email-wildearth-thanks.jpg',
+      'img/email-heavenly-saturday.jpg',
+      'img/email-bosley-wash.jpg',
+      'img/email-gunner-review.jpg',
     ];
 
-    function buildEmailCard(d, rotateIndex) {
+    function buildEmailCard(src, rotateIndex) {
       const card = document.createElement('div');
-      card.className = `email-card ${d.theme} email-rotate-${(rotateIndex % 5) + 1}`;
-      card.innerHTML = `
-        <div class="email-header">
-          <div class="email-from">From: ${d.from}</div>
-          <div>${d.subject}</div>
-        </div>
-        <div class="email-body">
-          <div class="email-hero"></div>
-          <div class="email-hero-content">
-            <h3 class="email-h">${d.h}</h3>
-            <p class="email-p">${d.p}</p>
-            <span class="email-cta">${d.cta}</span>
-          </div>
-        </div>
-      `;
+      card.className = `email-card email-rotate-${(rotateIndex % 5) + 1}`;
+      card.innerHTML = `<img src="${src}" alt="Email design example" loading="lazy">`;
       return card;
     }
 
     const row1 = document.getElementById('workRow1');
     const row2 = document.getElementById('workRow2');
     if (row1 && row2) {
-      // Row 1 = first 6 emails, Row 2 = last 6
-      const r1 = emailCards.slice(0, 6);
-      const r2 = emailCards.slice(6, 12);
-
-      // Render twice for seamless loop
-      [...r1, ...r1].forEach((d, i) => row1.appendChild(buildEmailCard(d, i)));
-      [...r2, ...r2].forEach((d, i) => row2.appendChild(buildEmailCard(d, i + 2)));
+      const r1 = emailImages.slice(0, 6);
+      const r2 = emailImages.slice(6, 12);
+      [...r1, ...r1].forEach((src, i) => row1.appendChild(buildEmailCard(src, i)));
+      [...r2, ...r2].forEach((src, i) => row2.appendChild(buildEmailCard(src, i + 2)));
     }
 
-    /* ─── 3. STATS COUNTER ─── */
+    /* Stats counter */
     const animateCount = (el) => {
       const target = parseFloat(el.dataset.target);
       const suffix = el.dataset.suffix || '';
@@ -1886,7 +1683,7 @@
 
     document.querySelectorAll('.stat-counter').forEach((el) => statObserver.observe(el));
 
-    /* ─── 4. SERVICES ACCORDION (single-open) ─── */
+    /* Services accordion (single-open) */
     document.querySelectorAll('.service-row').forEach((row) => {
       const trigger = row.querySelector('.service-trigger');
       trigger.addEventListener('click', () => {
@@ -1902,7 +1699,7 @@
       });
     });
 
-    /* ─── 5. FAQ ACCORDION (multi-open) ─── */
+    /* FAQ accordion (multi-open) */
     document.querySelectorAll('.faq-row').forEach((row) => {
       const trigger = row.querySelector('.faq-trigger');
       trigger.addEventListener('click', () => {
@@ -1911,12 +1708,14 @@
       });
     });
 
-    /* ─── 6. TESTIMONIALS CAROUSEL ─── */
+    /* Testimonials carousel :: fixed for mobile */
     const track = document.getElementById('testimonialsTrack');
+    const wrapper = document.getElementById('testWrapper');
     const prevBtn = document.getElementById('testPrev');
     const nextBtn = document.getElementById('testNext');
+    const dotsContainer = document.getElementById('testDots');
     let testIndex = 0;
-    let testCount = track.children.length;
+    const testCount = track.children.length;
 
     const getVisibleCount = () => {
       const w = window.innerWidth;
@@ -1925,14 +1724,35 @@
       return 3;
     };
 
+    const getMaxIndex = () => Math.max(0, testCount - getVisibleCount());
+
+    const renderDots = () => {
+      const max = getMaxIndex();
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i <= max; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === testIndex ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener('click', () => {
+          testIndex = i;
+          updateTrack();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    };
+
     const updateTrack = () => {
+      const max = getMaxIndex();
+      testIndex = Math.min(Math.max(0, testIndex), max);
       const visible = getVisibleCount();
-      const maxIdx = Math.max(0, testCount - visible);
-      testIndex = Math.min(testIndex, maxIdx);
-      const cardW = track.children[0].offsetWidth + 24; // include gap
-      track.style.transform = `translateX(-${testIndex * cardW}px)`;
+      const gap = 24;
+      const wrapperWidth = wrapper.offsetWidth;
+      const cardWidth = (wrapperWidth - gap * (visible - 1)) / visible;
+      const offset = testIndex * (cardWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
       prevBtn.disabled = testIndex === 0;
-      nextBtn.disabled = testIndex >= maxIdx;
+      nextBtn.disabled = testIndex >= max;
+      renderDots();
     };
 
     prevBtn.addEventListener('click', () => { testIndex--; updateTrack(); });
@@ -1943,40 +1763,68 @@
       clearTimeout(resizeT);
       resizeT = setTimeout(updateTrack, 100);
     });
-    updateTrack();
 
-    // auto-advance
+    requestAnimationFrame(() => { updateTrack(); });
+
     let autoplay = setInterval(() => {
-      const visible = getVisibleCount();
-      const maxIdx = Math.max(0, testCount - visible);
-      testIndex = (testIndex + 1) > maxIdx ? 0 : testIndex + 1;
+      const max = getMaxIndex();
+      testIndex = (testIndex + 1) > max ? 0 : testIndex + 1;
       updateTrack();
     }, 7000);
 
-    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoplay));
-    track.parentElement.addEventListener('mouseleave', () => {
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoplay));
+    wrapper.addEventListener('mouseleave', () => {
       autoplay = setInterval(() => {
-        const visible = getVisibleCount();
-        const maxIdx = Math.max(0, testCount - visible);
-        testIndex = (testIndex + 1) > maxIdx ? 0 : testIndex + 1;
+        const max = getMaxIndex();
+        testIndex = (testIndex + 1) > max ? 0 : testIndex + 1;
         updateTrack();
       }, 7000);
     });
 
-    // touch swipe
-    let touchStart = null;
-    track.addEventListener('touchstart', (e) => { touchStart = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend', (e) => {
-      if (touchStart === null) return;
-      const dx = e.changedTouches[0].clientX - touchStart;
-      if (Math.abs(dx) > 50) {
-        if (dx < 0) nextBtn.click();
-        else prevBtn.click();
-      }
-      touchStart = null;
+    /* Touch swipe :: horizontal-only detection */
+    let touchStartX = null;
+    let touchStartY = null;
+    let touchMoved = false;
+
+    wrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchMoved = false;
+      clearInterval(autoplay);
     }, { passive: true });
 
-    /* ─── 7. SCROLL REVEAL ─── */
+    wrapper.addEventListener('touchmove', (e) => {
+      if (touchStartX === null) return;
+      const dx = e.touches[0].clientX - touchStartX;
+      const dy = e.touches[0].clientY - touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        touchMoved = true;
+      }
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (touchMoved && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+        if (dx < 0 && testIndex < getMaxIndex()) {
+          testIndex++;
+        } else if (dx > 0 && testIndex > 0) {
+          testIndex--;
+        }
+        updateTrack();
+      }
+      touchStartX = null;
+      touchStartY = null;
+      touchMoved = false;
+      autoplay = setInterval(() => {
+        const max = getMaxIndex();
+        testIndex = (testIndex + 1) > max ? 0 : testIndex + 1;
+        updateTrack();
+      }, 7000);
+    }, { passive: true });
+
+    /* Scroll reveal */
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
