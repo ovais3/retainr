@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Lifecycle email and SMS marketing systems for D2C brands. Klaviyo certified. We make email 40% of your store revenue, or you don't pay.">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="retainr · Email that earns its keep">
+  <meta property="og:description" content="Lifecycle email and SMS for D2C brands. Klaviyo certified. 40% of store revenue or your money back.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://retainr.co">
+
+  <title>retainr · Email that earns its keep</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 16 26 L 84 26 L 84 80 L 28 80 L 28 38 L 72 38 L 72 68 L 40 68 L 40 50 L 60 50' stroke='%23D4B36A' stroke-width='9' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --surface-2: #1F1F1F;
+      --text: #F4F4ED;
+      --text-muted: #8E8E88;
+      --text-dim: rgba(244, 244, 237, 0.55);
+      --accent: #D4B36A;
+      --accent-dim: rgba(212, 179, 106, 0.65);
+      --accent-soft: rgba(212, 179, 106, 0.08);
+      --line: rgba(244, 244, 237, 0.08);
+      --line-strong: rgba(244, 244, 237, 0.16);
+
+      --sans: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: 'Fraunces', Georgia, serif;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --dur-fast: 180ms;
+      --dur-base: 320ms;
+      --dur-slow: 640ms;
+
+      --container: 1440px;
+      --gutter: clamp(20px, 4vw, 48px);
+      --section-pad: clamp(80px, 10vw, 140px);
+      --nav-h: 72px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *::selection { background: var(--accent); color: var(--bg); }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    section { scroll-margin-top: 80px; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { background: none; border: none; color: inherit; font: inherit; cursor: pointer; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    /* ==============================================================
+       KICKER :: clean, no leading dash, no pill. Just text.
+    ============================================================== */
+    .kicker {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: clamp(11px, 0.95vw, 13px);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-block;
+    }
+
+    .display {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(44px, 9vw, 112px);
+      letter-spacing: -0.04em;
+      line-height: 0.96;
+    }
+    .display em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+
+    .h2 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(28px, 4.5vw, 56px);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+
+    .lead {
+      font-family: var(--sans);
+      font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.55;
+      color: rgba(244, 244, 237, 0.72);
+      max-width: 60ch;
+    }
+
+    .body-text {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(244, 244, 237, 0.72);
+    }
+
+    /* All "label" text :: uses sans, NOT mono */
+    .label-text {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      border-radius: 4px;
+      border: 1px solid var(--accent);
+      transition: all var(--dur-fast) var(--ease-out);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: #E1C580; border-color: #E1C580; transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--accent); }
+    .btn-secondary:hover { background: var(--accent-soft); }
+
+    .btn-arrow { display: inline-flex; align-items: center; gap: 6px; transition: gap var(--dur-fast) var(--ease-out); }
+    .btn-arrow:hover { gap: 10px; }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      z-index: 100;
+      transition: background var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+    }
+    .nav.scrolled { background: rgba(10, 10, 10, 0.92); border-bottom-color: var(--line); }
+    .nav-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; flex-shrink: 0; position: relative; z-index: 102; }
+    .logo-mark { width: 22px; height: 22px; }
+    .logo-text { font-family: var(--sans); font-size: 19px; font-weight: 500; letter-spacing: -0.025em; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-link {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(244, 244, 237, 0.7);
+      transition: color var(--dur-fast);
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .nav-link:hover { color: var(--text); }
+    .nav-cta { flex-shrink: 0; }
+
+    .nav-burger {
+      display: none;
+      width: 40px; height: 40px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      position: relative;
+      z-index: 102;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+      transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-fast);
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(2.75px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-2.75px) rotate(-45deg); }
+
+    .nav-mobile {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #0A0A0A;
+      padding: calc(var(--nav-h) + 32px) var(--gutter) 48px;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-fast);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .nav-mobile.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .nav.menu-open { background: #0A0A0A; backdrop-filter: none; -webkit-backdrop-filter: none; }
+    .nav-mobile-link {
+      font-family: var(--sans);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+    }
+    .nav-mobile-cta { margin-top: 32px; align-self: flex-start; }
+
+    @media (max-width: 880px) {
+      .nav-links, .nav .nav-cta { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* ==============================================================
+       HERO
+    ============================================================== */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: calc(var(--nav-h) + 48px) var(--gutter) 96px;
+      position: relative;
+    }
+    .hero-content { max-width: 920px; }
+    .hero .kicker { margin-bottom: 28px; animation: fadeIn 600ms var(--ease-out) both; }
+    .hero h1 { margin-bottom: 28px; animation: fadeUp 700ms 100ms var(--ease-out) both; }
+    .hero .lead { margin: 0 auto 40px; animation: fadeUp 700ms 250ms var(--ease-out) both; }
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 700ms 400ms var(--ease-out) both;
+    }
+    /* Hero trust line :: using sans (not mono) */
+    .hero-trust {
+      margin-top: 48px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      animation: fadeIn 800ms 600ms var(--ease-out) both;
+    }
+    .hero-trust strong { color: var(--accent); font-weight: 600; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ==============================================================
+       LOGO MARQUEE
+    ============================================================== */
+    .marquee-section {
+      padding: 24px 0 48px;
+      border-top: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee-section::before, .marquee-section::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-section::before { left: 0; background: linear-gradient(90deg, var(--bg) 0%, transparent 100%); }
+    .marquee-section::after { right: 0; background: linear-gradient(270deg, var(--bg) 0%, transparent 100%); }
+    .marquee-track {
+      display: flex;
+      gap: 64px;
+      width: max-content;
+      animation: marquee 60s linear infinite;
+      will-change: transform;
+      align-items: center;
+    }
+    .marquee-section:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .client-logo {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      color: rgba(244, 244, 237, 0.55);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color var(--dur-fast);
+    }
+    .client-logo:hover { color: var(--text); }
+    .client-logo.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .client-logo.tracked { letter-spacing: 0.32em; text-transform: uppercase; font-size: 14px; }
+    .client-logo.thin { font-weight: 300; font-size: 26px; letter-spacing: -0.04em; }
+    .client-logo.bold { font-weight: 700; font-size: 24px; letter-spacing: -0.03em; }
+
+    /* ==============================================================
+       WORK SHOWCASE :: uses real images now
+    ============================================================== */
+    .work-section { padding: 60px 0 96px; overflow: hidden; }
+    .work-row {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      will-change: transform;
+      padding: 24px 0;
+    }
+    .work-row.row-1 { animation: marquee-left 90s linear infinite; }
+    .work-row.row-2 { animation: marquee-right 100s linear infinite; margin-top: 24px; }
+    @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes marquee-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .work-section:hover .work-row { animation-play-state: paused; }
+
+    .email-card {
+      width: 240px;
+      height: 540px;
+      background: var(--surface);
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--line);
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+      display: block;
+    }
+    .email-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .email-rotate-1 { transform: rotate(-2deg); }
+    .email-rotate-2 { transform: rotate(1.5deg); }
+    .email-rotate-3 { transform: rotate(-1deg); }
+    .email-rotate-4 { transform: rotate(2deg); }
+    .email-rotate-5 { transform: rotate(-1.5deg); }
+    .email-card:hover {
+      transform: rotate(0) scale(1.06);
+      box-shadow: 0 32px 80px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--accent-dim);
+      z-index: 5;
+    }
+
+    /* ==============================================================
+       STATS :: full container width, NO leading dash on label
+    ============================================================== */
+    .stats-section {
+      padding: var(--section-pad) 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+      text-align: left;
+      padding: 0 32px;
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+    .stat:first-child { padding-left: 0; }
+    .stat:last-child { border-right: none; padding-right: 0; }
+    .stat-num {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(48px, 6vw, 88px);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+    }
+    .stat-num em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+    .stat-label {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      max-width: 18ch;
+    }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+      .stat { padding: 24px 16px; border-bottom: 1px solid var(--line); align-items: flex-start; }
+      .stat:first-child, .stat:nth-child(3) { padding-left: 0; }
+      .stat:nth-child(2), .stat:nth-child(4) { padding-right: 0; border-right: none; }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+      .stat:nth-child(3) { border-right: 1px solid var(--line); }
+    }
+
+    /* ==============================================================
+       SERVICES :: fixed transitions (symmetric open/close timing)
+    ============================================================== */
+    .services-section { padding: var(--section-pad) 0; }
+    .services-section .kicker { margin-bottom: 24px; }
+    .services-section h2 { margin-bottom: 64px; max-width: 18ch; }
+    .services-list { border-top: 1px solid var(--line); }
+    .service-row {
+      border-bottom: 1px solid var(--line);
+      transition: border-color var(--dur-base);
+    }
+    .service-row.open { border-bottom-color: var(--accent-dim); }
+    .service-trigger {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 0;
+      cursor: pointer;
+      text-align: left;
+    }
+    .service-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-right: 24px;
+      transition: color var(--dur-base);
+    }
+    .service-row.open .service-num { color: var(--accent); }
+    .service-name {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(22px, 3vw, 36px);
+      letter-spacing: -0.02em;
+      color: var(--text);
+      transition: color var(--dur-base);
+      flex: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .service-row.open .service-name { color: var(--accent); }
+    .service-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 18px;
+      transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base);
+      flex-shrink: 0;
+    }
+    .service-row.open .service-icon { transform: rotate(45deg); border-color: var(--accent); }
+    /* grid-template-rows technique for symmetric open/close */
+    .service-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--dur-base) var(--ease-out);
+    }
+    .service-row.open .service-body { grid-template-rows: 1fr; }
+    .service-body-inner-wrap { overflow: hidden; min-height: 0; }
+    .service-body-inner {
+      padding: 0 0 32px;
+      max-width: 60ch;
+      padding-left: 56px;
+    }
+    .service-body p { font-size: 16px; line-height: 1.6; color: rgba(244, 244, 237, 0.72); margin-bottom: 20px; }
+    .service-link { font-family: var(--sans); font-weight: 500; font-size: 13px; color: var(--accent); letter-spacing: 0.02em; }
+    @media (max-width: 768px) {
+      .service-trigger { padding: 24px 0; }
+      .service-num { font-size: 14px; margin-right: 16px; }
+      .service-body-inner { padding-left: 32px; }
+    }
+
+    /* ==============================================================
+       PLATFORMS
+    ============================================================== */
+    .platforms-section { padding: var(--section-pad) 0; border-top: 1px solid var(--line); }
+    .platforms-grid-wrapper {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .platform-cell {
+      background: var(--bg);
+      padding: 28px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 88px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 16px;
+      color: rgba(244, 244, 237, 0.6);
+      letter-spacing: -0.01em;
+      transition: color var(--dur-fast), background var(--dur-fast);
+      position: relative;
+    }
+    .platform-cell:hover { color: var(--text); background: var(--surface); }
+    .platform-cell.featured { color: var(--accent); }
+    .platform-cell.featured::after {
+      content: '';
+      position: absolute;
+      top: 8px; right: 8px;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .platforms-copy h3 { margin-bottom: 24px; }
+    .platforms-copy .kicker { margin-bottom: 20px; }
+    @media (max-width: 880px) {
+      .platforms-grid-wrapper { grid-template-columns: 1fr; gap: 48px; }
+      .platforms-copy { order: -1; }
+      .platform-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+      .platform-cell { font-size: 14px; padding: 20px 8px; min-height: 72px; }
+    }
+
+    /* ==============================================================
+       TESTIMONIALS :: fixed mobile carousel
+    ============================================================== */
+    .testimonials-section { padding: var(--section-pad) 0; }
+    .testimonials-section .kicker { margin-bottom: 48px; }
+    .testimonials-track-wrapper {
+      overflow: hidden;
+      margin: 0 calc(-1 * var(--gutter));
+      padding: 0 var(--gutter);
+      touch-action: pan-y;
+    }
+    .testimonials-track {
+      display: flex;
+      gap: 24px;
+      transition: transform var(--dur-slow) var(--ease-out);
+      will-change: transform;
+    }
+    .testimonial-card {
+      flex: 0 0 calc((100% - 48px) / 3);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-height: 380px;
+    }
+    .testimonial-tag {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .testimonial-tag::before, .testimonial-tag::after {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      color: rgba(244, 244, 237, 0.92);
+      flex: 1;
+    }
+    .testimonial-attr { padding-top: 20px; border-top: 1px solid var(--line); }
+    .testimonial-name { font-family: var(--sans); font-weight: 500; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+    .testimonial-title { font-family: var(--sans); font-size: 13px; color: var(--text-dim); }
+
+    .testimonials-controls {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .carousel-btn {
+      width: 48px; height: 48px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 16px;
+      transition: all var(--dur-fast);
+      cursor: pointer;
+      background: transparent;
+    }
+    .carousel-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+    .carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    .carousel-dots { display: flex; gap: 8px; align-items: center; }
+    .carousel-dot {
+      width: 6px; height: 6px;
+      background: var(--line-strong);
+      border-radius: 50%;
+      transition: all var(--dur-fast);
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+    .carousel-dot.active {
+      background: var(--accent);
+      width: 24px;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 1024px) { .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); } }
+    @media (max-width: 720px) {
+      .testimonial-card { flex: 0 0 100%; min-height: 300px; padding: 28px 24px; }
+      .testimonial-quote { font-size: 16px; }
+    }
+
+    /* ==============================================================
+       CASE STUDIES :: competitor-style
+    ============================================================== */
+    .cases-section { padding: var(--section-pad) 0; border-top: 1px solid var(--line); }
+    .cases-section .kicker { margin-bottom: 24px; }
+    .cases-section h2 { margin-bottom: 56px; max-width: 22ch; }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all var(--dur-base) var(--ease-out);
+      display: flex;
+      flex-direction: column;
+    }
+    .case-card:hover { border-color: var(--accent-dim); transform: translateY(-2px); }
+    .case-cover {
+      padding: 36px 32px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .case-industry {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 6px 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    .case-headline-num {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(40px, 5vw, 64px);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+      margin-top: 32px;
+      padding: 0 32px;
+    }
+    .case-headline-num em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+    .case-headline-label {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 8px 32px 0;
+    }
+    .case-body {
+      padding: 24px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+    .case-brand {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .case-brand.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .case-brand.tracked { font-size: 14px; letter-spacing: 0.32em; text-transform: uppercase; }
+    .case-brand.thin { font-weight: 300; font-size: 26px; letter-spacing: -0.04em; }
+
+    .case-narrative {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(244, 244, 237, 0.72);
+    }
+    .case-narrative strong { color: var(--text); font-weight: 500; }
+
+    .case-results {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .case-results li {
+      font-family: var(--sans);
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(244, 244, 237, 0.78);
+      padding-left: 22px;
+      position: relative;
+    }
+    .case-results li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 12px; height: 1px;
+      background: var(--accent);
+    }
+    .case-results li strong { color: var(--text); font-weight: 500; }
+
+    .case-tags-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+    .case-tag {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 100px;
+      color: var(--text-dim);
+    }
+    .cases-more { text-align: center; margin-top: 56px; }
+    .cases-more a { font-family: var(--sans); font-weight: 500; font-size: 16px; color: var(--accent); letter-spacing: -0.01em; }
+
+    @media (max-width: 880px) {
+      .cases-grid { grid-template-columns: 1fr; }
+      .case-cover { padding: 24px 24px 0; }
+      .case-headline-num { padding: 0 24px; margin-top: 20px; }
+      .case-headline-label { padding: 8px 24px 0; }
+      .case-body { padding: 20px 24px 24px; }
+    }
+
+    /* ==============================================================
+       GUARANTEE :: clean, confident, single CTA, NO broken stamp box
+    ============================================================== */
+    .guarantee-section {
+      padding: var(--section-pad) 0;
+      border-top: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .guarantee-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%; max-width: 700px;
+      aspect-ratio: 1;
+      background: radial-gradient(circle, rgba(212, 179, 106, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .guarantee-inner {
+      position: relative;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .guarantee-section .kicker {
+      margin-bottom: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .guarantee-section .kicker::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulseDot 2.5s var(--ease-out) infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .guarantee-headline {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(32px, 5.5vw, 64px);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin: 0 auto 32px;
+      max-width: 22ch;
+    }
+    .guarantee-headline em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+    .guarantee-body {
+      font-family: var(--sans);
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 1.6;
+      color: rgba(244, 244, 237, 0.78);
+      max-width: 56ch;
+      margin: 0 auto 40px;
+    }
+    .guarantee-body strong { color: var(--text); font-weight: 500; }
+    .guarantee-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .guarantee-cta-row .btn { padding: 16px 28px; font-size: 15px; }
+    .guarantee-tagline {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+    }
+    .guarantee-tagline strong { color: var(--accent); font-weight: 600; }
+    @media (max-width: 600px) {
+      .guarantee-cta-row { flex-direction: column; gap: 20px; }
+      .guarantee-cta-row .btn { width: 100%; max-width: 320px; justify-content: center; }
+    }
+
+    /* ==============================================================
+       MID-PAGE CTA
+    ============================================================== */
+    .mid-cta { padding: var(--section-pad) 0; text-align: center; }
+    .mid-cta .kicker { margin-bottom: 32px; }
+    .mid-cta h2 { max-width: 22ch; margin: 0 auto 24px; }
+    .mid-cta .lead { margin: 0 auto 40px; max-width: 50ch; }
+
+    /* ==============================================================
+       FAQ
+    ============================================================== */
+    .faq-section { padding: var(--section-pad) 0; border-top: 1px solid var(--line); }
+    .faq-section .kicker { margin-bottom: 48px; }
+    .faq-list { max-width: 920px; margin: 0 auto; border-top: 1px solid var(--line); }
+    .faq-row { border-bottom: 1px solid var(--line); }
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-q {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(15px, 1.6vw, 18px);
+      letter-spacing: -0.01em;
+      color: var(--text);
+      transition: color var(--dur-fast);
+    }
+    .faq-trigger:hover .faq-q, .faq-row.open .faq-q { color: var(--accent); }
+    .faq-icon {
+      width: 24px; height: 24px;
+      color: var(--accent);
+      font-size: 16px;
+      transition: transform var(--dur-base) var(--ease-out);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .faq-row.open .faq-icon { transform: rotate(45deg); }
+    .faq-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--dur-base) var(--ease-out);
+    }
+    .faq-row.open .faq-body { grid-template-rows: 1fr; }
+    .faq-body-inner-wrap { overflow: hidden; min-height: 0; }
+    .faq-body-inner {
+      padding: 0 0 28px;
+      max-width: 60ch;
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(244, 244, 237, 0.72);
+    }
+
+    /* ==============================================================
+       FOOTER
+    ============================================================== */
+    .footer { padding: var(--section-pad) 0 32px; border-top: 1px solid var(--line); }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.5fr;
+      gap: 48px;
+      align-items: end;
+      padding-bottom: 80px;
+    }
+    .footer-col .kicker { margin-bottom: 16px; }
+    .footer-col h3 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(20px, 2.2vw, 28px);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 18ch;
+    }
+    .footer-col p {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      max-width: 30ch;
+    }
+    .footer-mark { display: flex; justify-content: flex-end; }
+    .footer-mark svg { width: 88px; height: 88px; opacity: 0.85; }
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    /* Footer copy :: using sans, NOT mono */
+    .footer-copy {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-family: var(--sans); font-size: 13px; color: var(--text-dim); transition: color var(--dur-fast); }
+    .footer-links a:hover { color: var(--text); }
+    @media (max-width: 880px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 56px; padding-bottom: 56px; }
+      .footer-mark { justify-content: flex-start; }
+      .footer-mark svg { width: 64px; height: 64px; }
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .hero { min-height: auto; padding-top: calc(var(--nav-h) + 64px); padding-bottom: 64px; }
+      .hero-ctas { flex-direction: column; align-items: center; width: 100%; }
+      .hero-ctas .btn { width: 100%; max-width: 320px; justify-content: center; }
+      .service-name { font-size: 22px; }
+      .case-card { border-radius: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo" aria-label="retainr home">
+        <svg class="logo-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path d="M 16 26 L 84 26 L 84 80 L 28 80 L 28 38 L 72 38 L 72 68 L 40 68 L 40 50 L 60 50" stroke="#D4B36A" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+        </svg>
+        <span class="logo-text">retainr</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#work">Work</a></li>
+        <li><a class="nav-link" href="#case-studies">Case Studies</a></li>
+        <li><a class="nav-link" href="#guarantee">Guarantee</a></li>
+        <li><a class="nav-link" href="#faq">FAQ</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
+
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="navMobile">
+      <a class="nav-mobile-link" href="#services">Services</a>
+      <a class="nav-mobile-link" href="#work">Work</a>
+      <a class="nav-mobile-link" href="#case-studies">Case Studies</a>
+      <a class="nav-mobile-link" href="#guarantee">Guarantee</a>
+      <a class="nav-mobile-link" href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary nav-mobile-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <main id="top">
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="kicker">Klaviyo Certified · Email &amp; SMS</span>
+      <h1 class="display">Email that <em>earns its keep.</em></h1>
+      <p class="lead">We make email 40% of your store revenue within 60 days. If we don't, you don't pay. Lifecycle email marketing systems for D2C brands focused on repeat revenue.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">
+          Book my free audit
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <a href="#case-studies" class="btn btn-secondary">See the work</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="marquee-section" aria-label="Client brands">
+    <div class="marquee-track">
+      <span class="client-logo bold">AirAura.</span>
+      <span class="client-logo bold">BosleyMD</span>
+      <span class="client-logo bold">WILD EARTH</span>
+      <span class="client-logo bold">D-ROBE</span>
+      <span class="client-logo serif">Vape At Door</span>
+      <span class="client-logo tracked">VITAL RISE</span>
+      <span class="client-logo">Heavenly Boxes</span>
+      <span class="client-logo serif">Twinky</span>
+      <span class="client-logo bold">GUNNER HOUND</span>
+      <span class="client-logo thin">ableton</span>
+      <span class="client-logo">Pop-up Tee</span>
+      <span class="client-logo tracked">ROYAL ARMS</span>
+      <span class="client-logo">US Boot</span>
+      <span class="client-logo serif">Syalz</span>
+      <span class="client-logo">Caliduo</span>
+      <span class="client-logo tracked">SCENTIONAL</span>
+      <span class="client-logo">Webside</span>
+      <span class="client-logo serif">Essence</span>
+      <span class="client-logo bold">AirAura.</span>
+      <span class="client-logo bold">BosleyMD</span>
+      <span class="client-logo bold">WILD EARTH</span>
+      <span class="client-logo bold">D-ROBE</span>
+      <span class="client-logo serif">Vape At Door</span>
+      <span class="client-logo tracked">VITAL RISE</span>
+      <span class="client-logo">Heavenly Boxes</span>
+      <span class="client-logo serif">Twinky</span>
+      <span class="client-logo bold">GUNNER HOUND</span>
+      <span class="client-logo thin">ableton</span>
+      <span class="client-logo">Pop-up Tee</span>
+      <span class="client-logo tracked">ROYAL ARMS</span>
+      <span class="client-logo">US Boot</span>
+      <span class="client-logo serif">Syalz</span>
+      <span class="client-logo">Caliduo</span>
+      <span class="client-logo tracked">SCENTIONAL</span>
+      <span class="client-logo">Webside</span>
+      <span class="client-logo serif">Essence</span>
+    </div>
+  </section>
+
+  <section class="work-section" id="work" aria-label="Selected work">
+    <div class="work-row row-1" id="workRow1"></div>
+    <div class="work-row row-2" id="workRow2"></div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <div class="stat-num"><em>$</em><span class="stat-counter" data-target="40" data-suffix="M+">$0M+</span></div>
+          <div class="stat-label">Attributed Revenue</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="stat-counter" data-target="40" data-suffix="">0</span></div>
+          <div class="stat-label">Brand Partners</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="stat-counter" data-target="30" data-suffix="">0</span><em>%</em></div>
+          <div class="stat-label">Repeat Revenue</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="stat-counter" data-target="15" data-suffix="">0</span><em>&times;</em></div>
+          <div class="stat-label">Avg Email ROI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="container">
+      <span class="kicker reveal">Our services</span>
+      <h2 class="h2 reveal" style="margin-top: 24px;">Built around <em>maximizing revenue</em> from your one time customers.</h2>
+
+      <div class="services-list">
+        <div class="service-row open" data-service="0">
+          <button class="service-trigger" aria-expanded="true">
+            <span class="service-name"><em class="service-num">01.</em>Lifecycle Email &amp; SMS</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Get email campaigns and flows that drive repeat purchases. This covers your Welcome flows, post-purchase, abandoned cart, replenishment, and win-back. Klaviyo-native, segment-driven, and rebuilt as your data sharpens or needs arise.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row" data-service="1">
+          <button class="service-trigger" aria-expanded="false">
+            <span class="service-name"><em class="service-num">02.</em>Campaign Strategy</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Promotional sends that protect deliverability and drive revenue. Calendar planning, segmentation, copy, design, send time optimization, A/B testing, and weekly performance review.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row" data-service="2">
+          <button class="service-trigger" aria-expanded="false">
+            <span class="service-name"><em class="service-num">03.</em>Deliverability Operations</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Inbox placement is the hidden multiplier on every send. We monitor reputation, authentication, list hygiene, complaint rates, engagement quality. Permanent service, not a one-time audit. Most clients see deliverability move from 84% to 97% in three months.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row" data-service="3">
+          <button class="service-trigger" aria-expanded="false">
+            <span class="service-name"><em class="service-num">04.</em>Audit &amp; Strategy</span>
+            <span class="service-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner-wrap">
+              <div class="service-body-inner">
+                <p>Senior eyes on your existing program. Free audit if there's fit. Then optional strategy retainers for in-house teams that need direction without the full-service price tag.</p>
+                <a href="#contact" class="service-link">Talk to us &nbsp;→</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="platforms-section">
+    <div class="container">
+      <div class="platforms-grid-wrapper">
+        <div class="platform-grid reveal">
+          <div class="platform-cell featured">Klaviyo</div>
+          <div class="platform-cell">Postscript</div>
+          <div class="platform-cell">Attentive</div>
+          <div class="platform-cell">Sendlane</div>
+          <div class="platform-cell">Recharge</div>
+          <div class="platform-cell">Skio</div>
+          <div class="platform-cell">Yotpo</div>
+          <div class="platform-cell">Junip</div>
+          <div class="platform-cell">Loop</div>
+          <div class="platform-cell">Gorgias</div>
+          <div class="platform-cell">Shopify</div>
+          <div class="platform-cell">Triple Whale</div>
+        </div>
+        <div class="platforms-copy reveal">
+          <span class="kicker">Platform Certified</span>
+          <h3 class="h2" style="font-size: clamp(24px, 2.8vw, 36px); margin: 0 0 20px;">Klaviyo first. <em>Stack chosen per brand.</em></h3>
+          <p class="body-text">We specialize in Klaviyo for D2C retention, plus partner with the platforms below for full-stack execution. Dedicated support and product roadmap access before they ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <span class="kicker">Testimonials</span>
+      <div class="testimonials-track-wrapper" id="testWrapper">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"Haseeb is a big professional. Every question we had he provided very detailed answers. Highly responsive, always willing to help, and recorded detailed walkthroughs so we could reproduce things after the collaboration."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Game Biz</div>
+              <div class="testimonial-title">Founder &amp; CEO</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"I've been working with retainr for our email marketing campaigns and the results have been outstanding. Their strategy is clear, targeted, and highly effective. Highly recommended for anyone serious about email."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Vape At Door</div>
+              <div class="testimonial-title">Founder &amp; CEO</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"Very happy with Haseeb's team on guiding the email marketing process. They moved us from no system to a real revenue channel in weeks, not months."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Twinky Store</div>
+              <div class="testimonial-title">Founder &amp; CEO</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"We're thankful that we chose your agency. With a Fox News feature five days out and zero email infrastructure, they built everything from scratch. Flows alone drove 15% of revenue from the spotlight."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Jack</div>
+              <div class="testimonial-title">Founder, US Boot</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-tag">Satisfied client</div>
+            <p class="testimonial-quote">"WOW. Now that is an upgrade. Their first new campaign designs were a step-change from anything we'd had before. The whole brand started feeling more premium overnight."</p>
+            <div class="testimonial-attr">
+              <div class="testimonial-name">Elijah Canfield</div>
+              <div class="testimonial-title">Founder, Pop-up Tee</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="testimonials-controls">
+        <button class="carousel-btn" id="testPrev" aria-label="Previous testimonial">←</button>
+        <div class="carousel-dots" id="testDots"></div>
+        <button class="carousel-btn" id="testNext" aria-label="Next testimonial">→</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cases-section" id="case-studies">
+    <div class="container">
+      <span class="kicker">Case studies</span>
+      <h2 class="h2" style="margin-top: 24px;">Proof, <em>not promises.</em></h2>
+
+      <div class="cases-grid">
+
+        <article class="case-card reveal">
+          <div class="case-cover">
+            <div class="case-brand serif">Skincare Lab</div>
+            <span class="case-industry">Skincare &amp; Biotech</span>
+          </div>
+          <div class="case-headline-num"><em>$</em>1<em>M+</em></div>
+          <div class="case-headline-label">Klaviyo attributed in 4 months</div>
+          <div class="case-body">
+            <p class="case-narrative">A skincare and biotech brand wanted retention to become a real revenue channel. We rebuilt campaigns, flows, email and SMS together. Four months in, Klaviyo was driving <strong>52% of total store revenue</strong>.</p>
+            <ul class="case-results">
+              <li><strong>Q4 2025:</strong> $380K attributed, up 999% vs prior</li>
+              <li><strong>Jan-Feb 2026:</strong> $682K, up another 122%</li>
+              <li><strong>Deliverability score 90/100:</strong> 48.4% open, 0.31% bounce</li>
+            </ul>
+            <div class="case-tags-row">
+              <span class="case-tag">Lifecycle</span>
+              <span class="case-tag">SMS</span>
+              <span class="case-tag">Deliverability</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="case-cover">
+            <div class="case-brand">US Boot</div>
+            <span class="case-industry">Footwear</span>
+          </div>
+          <div class="case-headline-num">15<em>%</em></div>
+          <div class="case-headline-label">Of total revenue from flows alone</div>
+          <div class="case-body">
+            <p class="case-narrative">Texas-made boot brand was about to be featured on Fox News with <strong>zero email setup</strong>. No flows, no popup, no list. We built the full system in <strong>5 days</strong> and captured the spotlight traffic before it hit the homepage.</p>
+            <ul class="case-results">
+              <li><strong>Flows live in 5 days:</strong> welcome, cart, browse, post-purchase</li>
+              <li><strong>Two popup forms shipped:</strong> time-delay and exit-intent</li>
+              <li><strong>15% of total revenue</strong> from flows alone, post-feature</li>
+            </ul>
+            <div class="case-tags-row">
+              <span class="case-tag">Flows</span>
+              <span class="case-tag">List Growth</span>
+              <span class="case-tag">Speed</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="case-cover">
+            <div class="case-brand serif">Vape At Door</div>
+            <span class="case-industry">UK D2C</span>
+          </div>
+          <div class="case-headline-num">30<em>%</em></div>
+          <div class="case-headline-label">Of monthly store revenue</div>
+          <div class="case-body">
+            <p class="case-narrative">Designs were cluttered, off-brand, and not built to convert. The founder was tired of "pretty" emails that didn't sell. We rebuilt every template around <strong>one job: drive the click</strong>. Customers now compliment the emails. Email owns 30% of monthly revenue.</p>
+            <ul class="case-results">
+              <li><strong>Templates rebuilt:</strong> conversion-led, brand-aligned</li>
+              <li><strong>30% of total revenue</strong> from email, sustained monthly</li>
+              <li><strong>Customer feedback flipped:</strong> indifferent to actively praising</li>
+            </ul>
+            <div class="case-tags-row">
+              <span class="case-tag">Campaigns</span>
+              <span class="case-tag">Design</span>
+              <span class="case-tag">Brand</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="case-cover">
+            <div class="case-brand serif">Twinky</div>
+            <span class="case-industry">Baby Products · NL</span>
+          </div>
+          <div class="case-headline-num">19<em>×</em></div>
+          <div class="case-headline-label">Campaign revenue lift</div>
+          <div class="case-body">
+            <p class="case-narrative">Dutch baby brand whose campaigns drove just <strong>0.51% of revenue</strong>. The team had given up on email as a meaningful channel. We installed a monthly rhythm, mixed promotional with educational, and rebuilt designs around the brand's actual identity.</p>
+            <ul class="case-results">
+              <li><strong>Campaign revenue:</strong> 0.51% to 9.89% in three months</li>
+              <li><strong>Branded templates</strong> built for conversion, not decoration</li>
+              <li><strong>Monthly send rhythm</strong> replaced ad-hoc execution</li>
+            </ul>
+            <div class="case-tags-row">
+              <span class="case-tag">Campaigns</span>
+              <span class="case-tag">Strategy</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cases-more">
+        <a href="#contact" class="btn-arrow">See all case studies <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════
+       GUARANTEE :: clean, no broken stamp box
+  ═════════════════════════════════════════════════════════ -->
+  <section class="guarantee-section" id="guarantee">
+    <span id="contact" aria-hidden="true"></span>
+    <div class="container">
+      <div class="guarantee-inner">
+        <span class="kicker">60-Day Contractual Promise</span>
+        <h2 class="guarantee-headline">Email becomes <em>40% of your store revenue</em> in 60 days, or you don't pay.</h2>
+        <p class="guarantee-body">We put it in writing. If our system doesn't drive at least <strong>40% of your store's total revenue</strong> within 60 days of going live, you get every dollar back. No fine print. No clawbacks. No "yeah but."</p>
+        <div class="guarantee-cta-row">
+          <a href="#contact" class="btn btn-primary">
+            Yes, book my free audit
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <span class="kicker">FAQ</span>
+      <div class="faq-list">
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What does retainr do?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Lifecycle email marketing systems for D2C brands focused on repeat revenue. We handle strategy, copy, design, and implementation from end to end, so you don't have to. Klaviyo is our primary platform.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What kind of brands do you work with?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Founder-led D2C brands with strong product but under-built email. 30+ partners across skincare, fashion, supplements, food, footwear, baby products, vape, home. Average tenure 14 months.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">Is the 60-day guarantee real?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Yes. It's in the contract. If our system doesn't drive at least 40% of your store's total revenue within 60 days of going live, you get every dollar back. No clawbacks, no fine print. We can do this because we've done it 30+ times.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What platforms do you build on?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Klaviyo for email and SMS, primary. Postscript or Attentive when those are already in place. Recharge or Skio for subscriptions. Yotpo or Junip for reviews. Stack picked per brand.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">How is retainr different from other agencies?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">We optimize for attributed revenue, not vanity metrics like open rates unless needed. We own subscriber list growth optimization and deliverability score improvement as a permanent service. We bill fixed monthly with explicit deliverable scope.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What does an engagement cost?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Pricing is fixed monthly, scoped to the setup your brand needs. Audit is absolutely free. Strategy engagements start at $5K monthly. Full-service lifecycle programs start at $8K monthly. We don't take percentage-of-revenue deals.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">How do I get started?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner-wrap">
+              <div class="faq-body-inner">Book a 30-minute call. Three questions about your current setup, then we book the audit if there's fit. Audit takes ten business days. Useful even if we don't end up working together.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <span class="kicker">Want to talk?</span>
+          <h3>Send a note. We respond in one business day.</h3>
+          <p>Three questions, a calendar link, no boilerplate.</p>
+          <a href="mailto:hello@retainr.co" class="btn btn-primary">
+            Get in touch
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7H12M12 7L7 2M12 7L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-col">
+          <span class="kicker">Looking for a hire?</span>
+          <h3>We hire operators who care about the unglamorous parts.</h3>
+          <p>Senior IC track. Remote-first. Quarterly reviews.</p>
+          <a href="mailto:careers@retainr.co" class="btn btn-secondary">View open roles</a>
+        </div>
+        <div class="footer-mark">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M 16 26 L 84 26 L 84 80 L 28 80 L 28 38 L 72 38 L 72 68 L 40 68 L 40 50 L 60 50" stroke="#D4B36A" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">© retainr 2026</span>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* Nav */
+    const nav = document.getElementById('nav');
+    const burger = document.getElementById('navBurger');
+    const navMobile = document.getElementById('navMobile');
+
+    const setNavScroll = () => {
+      if (window.scrollY > 24) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    setNavScroll();
+    window.addEventListener('scroll', setNavScroll, { passive: true });
+
+    burger.addEventListener('click', () => {
+      const isOpen = burger.classList.toggle('open');
+      navMobile.classList.toggle('open', isOpen);
+      nav.classList.toggle('menu-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.nav-mobile-link, .nav-mobile-cta').forEach((el) => {
+      el.addEventListener('click', () => {
+        burger.classList.remove('open');
+        navMobile.classList.remove('open');
+        nav.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* Work showcase :: real client work + custom mockups, interleaved across brands */
+    const emailImages = [
+      // Row 1
+      'img/email-airaura-thanks.jpg',
+      'img/email-smalls-couchcarnivore.jpg',
+      'img/email-twice-flavors.jpg',
+      'img/email-bosley-awareness.jpg',
+      'img/email-wildearth-cashback.jpg',
+      'img/email-airaura-checkout.jpg',
+      'img/email-mattressnextday-sale.jpg',
+      'img/email-twice-whitening.jpg',
+      'img/email-bosley-promo.jpg',
+      // Row 2
+      'img/email-airaura-review.jpg',
+      'img/email-smalls-hunter.jpg',
+      'img/email-kin-bday.jpg',
+      'img/email-twice-floss.jpg',
+      'img/email-airaura-browse.jpg',
+      'img/email-wildearth-thanks.jpg',
+      'img/email-bosley-wash.jpg',
+      'img/email-wildearth-welcome.jpg',
+    ];
+
+    function buildEmailCard(src, rotateIndex) {
+      const card = document.createElement('div');
+      card.className = `email-card email-rotate-${(rotateIndex % 5) + 1}`;
+      card.innerHTML = `<img src="${src}" alt="Email design example" loading="lazy">`;
+      return card;
+    }
+
+    const row1 = document.getElementById('workRow1');
+    const row2 = document.getElementById('workRow2');
+    if (row1 && row2) {
+      const mid = Math.ceil(emailImages.length / 2);
+      const r1 = emailImages.slice(0, mid);
+      const r2 = emailImages.slice(mid);
+      [...r1, ...r1].forEach((src, i) => row1.appendChild(buildEmailCard(src, i)));
+      [...r2, ...r2].forEach((src, i) => row2.appendChild(buildEmailCard(src, i + 2)));
+    }
+
+    /* Stats counter */
+    const animateCount = (el) => {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const isInt = Number.isInteger(target);
+      const duration = 1400;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const current = target * eased;
+        el.textContent = (isInt ? Math.floor(current) : current.toFixed(1)) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = (isInt ? target : target.toFixed(1)) + suffix;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          statObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-counter').forEach((el) => statObserver.observe(el));
+
+    /* Services accordion (single-open) */
+    document.querySelectorAll('.service-row').forEach((row) => {
+      const trigger = row.querySelector('.service-trigger');
+      trigger.addEventListener('click', () => {
+        const isOpen = row.classList.contains('open');
+        document.querySelectorAll('.service-row').forEach((r) => {
+          r.classList.remove('open');
+          r.querySelector('.service-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          row.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* FAQ accordion (multi-open) */
+    document.querySelectorAll('.faq-row').forEach((row) => {
+      const trigger = row.querySelector('.faq-trigger');
+      trigger.addEventListener('click', () => {
+        const isOpen = row.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+    });
+
+    /* Testimonials carousel :: fixed for mobile */
+    const track = document.getElementById('testimonialsTrack');
+    const wrapper = document.getElementById('testWrapper');
+    const prevBtn = document.getElementById('testPrev');
+    const nextBtn = document.getElementById('testNext');
+    const dotsContainer = document.getElementById('testDots');
+    let testIndex = 0;
+    const testCount = track.children.length;
+
+    const getVisibleCount = () => {
+      const w = window.innerWidth;
+      if (w <= 720) return 1;
+      if (w <= 1024) return 2;
+      return 3;
+    };
+
+    const getMaxIndex = () => Math.max(0, testCount - getVisibleCount());
+
+    const renderDots = () => {
+      const max = getMaxIndex();
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i <= max; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === testIndex ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener('click', () => {
+          testIndex = i;
+          updateTrack();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    };
+
+    const updateTrack = () => {
+      const max = getMaxIndex();
+      testIndex = Math.min(Math.max(0, testIndex), max);
+      const visible = getVisibleCount();
+      const gap = 24;
+      const wrapperWidth = wrapper.offsetWidth;
+      const cardWidth = (wrapperWidth - gap * (visible - 1)) / visible;
+      const offset = testIndex * (cardWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+      prevBtn.disabled = testIndex === 0;
+      nextBtn.disabled = testIndex >= max;
+      renderDots();
+    };
+
+    prevBtn.addEventListener('click', () => { testIndex--; updateTrack(); });
+    nextBtn.addEventListener('click', () => { testIndex++; updateTrack(); });
+
+    let resizeT;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(updateTrack, 100);
+    });
+
+    requestAnimationFrame(() => { updateTrack(); });
+
+    let autoplay = setInterval(() => {
+      const max = getMaxIndex();
+      testIndex = (testIndex + 1) > max ? 0 : testIndex + 1;
+      updateTrack();
+    }, 7000);
+
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoplay));
+    wrapper.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => {
+        const max = getMaxIndex();
+        testIndex = (testIndex + 1) > max ? 0 : testIndex + 1;
+        updateTrack();
+      }, 7000);
+    });
+
+    /* Touch swipe :: horizontal-only detection */
+    let touchStartX = null;
+    let touchStartY = null;
+    let touchMoved = false;
+
+    wrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchMoved = false;
+      clearInterval(autoplay);
+    }, { passive: true });
+
+    wrapper.addEventListener('touchmove', (e) => {
+      if (touchStartX === null) return;
+      const dx = e.touches[0].clientX - touchStartX;
+      const dy = e.touches[0].clientY - touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        touchMoved = true;
+      }
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (touchMoved && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+        if (dx < 0 && testIndex < getMaxIndex()) {
+          testIndex++;
+        } else if (dx > 0 && testIndex > 0) {
+          testIndex--;
+        }
+        updateTrack();
+      }
+      touchStartX = null;
+      touchStartY = null;
+      touchMoved = false;
+      autoplay = setInterval(() => {
+        const max = getMaxIndex();
+        testIndex = (testIndex + 1) > max ? 0 : testIndex + 1;
+        updateTrack();
+      }, 7000);
+    }, { passive: true });
+
+    /* Scroll reveal */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  })();
+  </script>
+</body>
+</html>
